@@ -1,0 +1,23 @@
+.w2-col.s4 {
+    display: inline-flex;
+}
+
+img {
+    height: 637px;
+}
+
+form {
+    position: relative;
+    top: 44%;
+}
+
+label {
+    color: #f7b809;
+    font-weight: bold;
+}
+
+
+input.form-control {
+    /* border-bottom-style: inset; */
+    border-color: #f7b610;
+}
