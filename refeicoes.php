@@ -157,24 +157,6 @@ function filterFunction() {
 }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>ReFood</h4>
-    <p>2019 - PTSI - MIEGSI - 4º ANO - G105 </p>
-  </footer>
-
   <!-- End page content -->
 </div>
 
