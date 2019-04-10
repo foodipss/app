@@ -51,8 +51,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 </nav>
 
-<head>
-<meta charset='utf-8' />
+
   <script src='js/jquery-ui.min.js'></script>
   <script src='js/moment.min.js'></script>
   <script src='js/fullcalendar.min.js'></script>
