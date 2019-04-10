@@ -1,28 +1,14 @@
-<html>
-<body>
-
 <?php
+session_start();
 
-$con = mysql_connect("us-cdbr-iron-east-03.cleardb.net","b74a37105022bd","c0139137");
-if (! $con){
-  die ( "Não foi possível conectar: ​​'mysql_error ()'");
-  } else { 
-  mysql_select_db('heroku_af588fa1a66d1f3', $con);
-  $nome = $_POST['nome']; 
-  $telefone = $_POST['telefone'];
- 
-  $sql = mysql_query("INSERT INTO voluntario (idVoluntario, nome, telefone) VALUES 
-  (6,'$nome','$telefone')"); 
-  
-  if (!$sql){
-	die("Error: 'mysql_error()'");
-  } else {
-   echo "<script> alert('Parabéns ! O seu registo foi aceite.');top.location.href='menuadministrador.php';</script>";
-  }
+if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST["query"])=='novoVoluntario') {
+    $db = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");
+    $idVoluntario = mysqli_real_escape_string($db,$_POST["idVoluntario"]);
+    $nome = mysqli_real_escape_string($db,$_POST["nome"]);
+    $telefone = mysqli_real_escape_string($db,$_POST["telefone"]);
+    
+    $query = "INSERT INTO voluntario (idVoluntario, nome, telefone) VALUES (4, '$nome', '$telefone')";
+    $queryq = mysqli_query($db, $query);
 }
- 
-mysql_close( $con); 
+mysqli_close($db);
 ?>
-
-</body>
-</html>
