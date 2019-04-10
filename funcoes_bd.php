@@ -1,10 +1,10 @@
 <?php
 
 
-define('MYSQL_SERVER', '127.0.0.1');
-define('MYSQL_USERNAME', 'root');
-define('MYSQL_PASSWORD', '');
-define('MYSQL_DATABASE', 'test');
+define('MYSQL_SERVER', 'us-cdbr-iron-east-03.cleardb.net');
+define('MYSQL_USERNAME', 'b74a37105022bd');
+define('MYSQL_PASSWORD', 'c0139137');
+define('MYSQL_DATABASE', 'heroku_af588fa1a66d1f3');
 
 function ligar_base_dados() {
     $ligacao = mysqli_connect(MYSQL_SERVER, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE) or die('Erro ao ligar ao servidor...');
