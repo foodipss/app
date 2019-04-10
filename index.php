@@ -18,7 +18,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <li><a class="w3-bar-item w3-right" href="logout.php">Logout</a></li>
 </div>
 
-<!-- Sidebar/menu -->
+<!-- Sidebar/menu
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
@@ -32,7 +32,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   <hr>
-
+ -->
   <div class="w3-bar-block">
       
     <a href="registarFontes.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Fontes</a>
