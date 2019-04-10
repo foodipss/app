@@ -5,7 +5,7 @@
 <?php
 require('conexao.php');
 
-$con = mysqli_connect("localhost", "root", "ptsi", "refood");
+$con = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");
   
 $idVoluntario=$_POST['idVoluntario'];
 $nome=$_POST['nome'];
