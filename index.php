@@ -59,12 +59,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
 
-  <!-- Footer -->
+  <!-- Footer
   <footer class="w3-container w3-padding-16 w3-light-grey">
     <h4>ReFood</h4>
     <p>2019 - PTSI - MIEGSI - 4º ANO - G105 </p>
   </footer>
-
+ -->
   <!-- End page content -->
 </div>
 
