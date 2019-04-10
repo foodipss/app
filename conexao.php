@@ -1,9 +1,9 @@
 <?php
 
-$hostname = '127.0.0.1:3306';
-$username = 'root';
-$password = '';
-$database = 'test';
+$hostname = 'us-cdbr-iron-east-03.cleardb.net';
+$username = 'b74a37105022bd';
+$password = 'c0139137';
+$database = 'heroku_af588fa1a66d1f3';
  
 try {
     $conexao = new PDO("mysql:host=$hostname;dbname=$database", $username, $password,
