@@ -9,6 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && ($_POST["query"])=='novoVoluntario')
     
     $query = "INSERT INTO voluntario (idVoluntario, nome, telefone) VALUES (4, '$nome', '$telefone')";
     $queryq = mysqli_query($db, $query);
+    
 }
+
+else {
+   echo "<script> alert('Parabéns ! O seu registo foi aceite.');top.location.href='voluntario.php';</script>";
+  }
+
 mysqli_close($db);
 ?>
