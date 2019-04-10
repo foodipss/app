@@ -60,9 +60,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </header>
 
 <?php
+require('conexao.php');
 
-$db = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");
 $query="SELECT idVoluntario, nome, telefone FROM voluntario";
+
 $resultado=$mysqli->query($query);
 
 ?>
