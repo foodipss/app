@@ -57,26 +57,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <h5><b><i class="fa fa-dashboard"></i> Novo Voluntário </b></h5>
   </header>
 
-<div class="novoVoluntario">
-  <h2>Criar Voluntário</h2>
-  <br>
-  <form method="post" action= "criarVoluntario2.php"> 
-  <input type="text" name="nome" required="required" value="" class="form-control" placeholder="nome" pattern="[a-z\s]+$">
-  <span class="error">*</span>
-  <br>
-  <input type="int" name="idVoluntario"  required="required" value="" class="form-control" placeholder="idVoluntario" pattern="[0-9]+$">
-  <span class="error">*</span>
-  <br>
-  <input type="text" name="telefone" maxlength="9" required="required" value="" class="form-control" placeholder="telefone" pattern="[0-9]+$">
-  <span class="error">*</span>
-  <p><span class="error">* Campo Obrigatorio!</span></p>
-  <br>
-	  
-  <input type='hidden' name='query' value="novoVoluntario">	  
-  <input type="submit" name="submit" class="btn btn-default" value="Criar Voluntario">  
-  <button type="button" value="Voltar" class="btn btn-default" onClick="history.go(-1)"> Cancelar </button>
-  
-</form>
+	
+	
+	
+	
 
     <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
