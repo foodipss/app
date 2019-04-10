@@ -177,7 +177,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <div class="linha">
             <footer>
                 <div class="coluna col12">
-                    <span>&copy; 2016 - PW - MIEGSI - 2º ANO - G104</span>
+                  
                 </div>
             </footer>               
         </div>
