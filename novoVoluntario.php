@@ -71,6 +71,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <span class="error">*</span>
   <p><span class="error">* Campo Obrigatorio!</span></p>
   <br>
+	  
+  <input type='hidden' name='query' value="novoVoluntario">	  
   <input type="submit" name="submit" class="btn btn-default" value="Criar Voluntario">  
   <button type="button" value="Voltar" class="btn btn-default" onClick="history.go(-1)"> Cancelar </button>
   
