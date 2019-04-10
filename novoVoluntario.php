@@ -58,7 +58,51 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </header>
 
 	
-	
+
+        <div> <?php require '../Top.php'; ?> </div>
+
+    <div class="container">
+        <div id="pagina" style="display: none;">
+            <form action="criarVoluntario2.php" method="post" id="voluntario">
+                <table id="tableVoluntario">
+                    <tr>
+                        <td>    <div class="form-group">
+                                
+                                <label for='nome'>Nome: </label>
+                                <input type="text" name="nome" class="form-control" id="nome">
+                       </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="telefone">Telefone: </label>
+                                <input name="telefone" class="form-control" id="telefone">
+                            </div>
+                       </td>
+
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="emailFunc">Email:  </label>
+                                <input name="emailFunc" class="form-control" id="nifFunc">
+                            </div>
+                       </td>
+
+                    </tr>
+
+
+                </table>
+
+                <input type='hidden' name='query' value="NovoVoluntario">
+                <input type="submit" value="Registar Voluntario" id="validar" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
 	
 	
 
