@@ -8,7 +8,7 @@
   <body>
   
 <div class="w2-col s4">
-      <img src="app/img/login.JPG"> 
+      <img src="app/img/login.jpg"> 
 	   <div class="form">
 	   <form method="post">
     <div class="form-group">
