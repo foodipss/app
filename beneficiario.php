@@ -69,7 +69,7 @@ $resultado=$mysqli->query($query);
 ?>
 
 <a href="novoBeneficiario.php">Novo Beneficiario</a>
-<div class="colunaListaVoluntario">
+<div class="colunaListaBeneficiario">
  	<table class="table">
     <thead>
       <tr>
