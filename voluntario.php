@@ -39,7 +39,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="registarFontes.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Fontes</a>
     <a href="registarTupp.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Tupperwares</a>
     <a href="refeicoes.php" class="w3-bar-item w3-button w3-padding w3-orange"><i class="fa fa-users fa-fw"></i>  Refeições</a>
-    <a href="benefeciario.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Benefeciários</a>
+    <a href="beneficiario.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Beneficiários</a>
     <a href="voluntario.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Voluntários</a>
     <a href="turno.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Turnos</a>
     <a href="analise.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Análises</a>
@@ -62,7 +62,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Ligação Base de dados -->
 <?php
-require('conexao.php');
+require('conexao_perfil.php');
 
 $query="SELECT idVoluntario, nome, telefone FROM voluntario";
 
