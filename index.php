@@ -32,7 +32,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="analise.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Análises</a>
     <a href="ajuda.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Ajuda</a><br><br>
   </div>
-</nav>
+
 
 
 <!-- Overlay effect when opening sidebar on small screens -->
