@@ -1,7 +1,7 @@
 <html lang="pt-pt">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="app/css/estiloIndex.css">
+    <link rel="stylesheet" href="estiloIndex.css">
   </head>
   <body>
     <nav>
