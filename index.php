@@ -12,7 +12,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body class="w3-light-grey">
   
 	<!-- Top container -->
-<div class="w3-bar w3-top w3-orange w3-large" style="z-index:4">
+<div class="w3-bar w3-top w3-orange w3-large" >
  	
 	<li><a class="w3-bar-item w3-right" href="logout.php">Logout</a></li>
 </div>
