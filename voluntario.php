@@ -59,46 +59,48 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <p>
   </header>
 
-            <div class="tab-content">
-                <div id="tabelaVoluntario" class="tab-pane fade in active">
-                    <table class="table table-hover" style="border:1px solid black;"  >
-                        <thead class="thead-default">
-                            <tr>
-                                <th colspan="2" style="text-align: center;">Informações do Voluntário</th>
-                            </tr>
+         <!-- Ligação Base de dados -->
+<?php
+require('conexao.php');
 
-                        </thead>
+$query="SELECT idVoluntario, nome, telefone FROM voluntario";
 
-                        <tbody>
-                            <?php
-                                $db = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");
-                                $idVoluntario = $_POST["$idVoluntario"];
-                                $query = "SELECT * FROM voluntario where idVoluntario= '$idVoluntario'";
-                                $result = mysqli_query($db, $query);
-                                $line = mysqli_fetch_array($result);
-                                mysqli_close($db);
-                       
-                            ?>
-                            <tr>
-                                <td>Nome</td>
-                                <td><?php echo $line['nome']?></td>
-                            </tr>
-                            
-                            <tr>
-                                <td>Telefone</td>
-                                <td><?php echo $line['telefone']?></td>
-                            </tr>
-             
+$resultado=$mysqli->query($query);
 
-                    </table>
-                    
-                </div>
-                
-            </div>
-	
-	
-	
+?>
 
+
+<div class="colunaListaVoluntario">
+	<a href="novoVoluntario.php">Novo Voluntario</a>
+ 	<p></p>
+ 	<table class="table">
+
+    <thead>
+      <tr>
+        <th>idVoluntario</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+<tbody>
+		<?php while($row=$resultado->fetch_assoc()){?>
+			<tr>
+			<td><?php echo $row['idVoluntario'];?>
+			</td>
+			<td>
+			<?php echo $row['nome'];?>
+			</td>
+			<td>
+			<?php echo $row['telefone'];?>
+			</td>
+		<?php } ?>
+
+</tbody>
+
+
+
+</table>
+</div>
 <p>
     <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
