@@ -3,12 +3,12 @@
  <head>
 
  
-   <link rel="stylesheet" href="/app/css/estiloLogin.css">
+   <link rel="stylesheet" href="css/estiloLogin.css">
     </head>
   <body>
   
 <div class="w2-col s4">
-      <img src="/app/img/login.jpg"> 
+      <img src="img/login.jpg"> 
 	   <div class="form">
 	   <form method="post">
     <div class="form-group">
