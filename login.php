@@ -3,7 +3,7 @@
  <head>
 	<style>
 		body{
-			background: url("img/ola.png");
+			background: url("app/img/ola.png");
 			background-size: 100%;
 			float: right;
 			position: relative;
@@ -14,7 +14,7 @@
 		
 	</style>
  
-   <link rel="stylesheet" href="css/estiloLogin.css">
+   <link rel="stylesheet" href="app/css/estiloLogin.css">
     </head>
   <body>
   
