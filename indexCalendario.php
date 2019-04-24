@@ -28,7 +28,7 @@
      center:'title',
      right:'month,agendaWeek,agendaDay'
     },
-    events: 'load.php',
+    events: 'loadCalendario.php',
     selectable:true,
     selectHelper:true,
 	height: 'auto',
@@ -40,7 +40,7 @@
       var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
       var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
       $.ajax({
-       url:"insert.php",
+       url:"insertCalendario.php",
        type:"POST",
        data:{title:title, start:start, end:end},
        success:function()
@@ -59,7 +59,7 @@
      var title = event.title;
      var id = event.id;
      $.ajax({
-      url:"update.php",
+      url:"updateCalendario.php",
       type:"POST",
       data:{title:title, start:start, end:end, id:id},
       success:function(){
@@ -76,7 +76,7 @@
      var title = event.title;
      var id = event.id;
      $.ajax({
-      url:"update.php",
+      url:"updateCalendario.php",
       type:"POST",
       data:{title:title, start:start, end:end, id:id},
       success:function()
@@ -93,7 +93,7 @@
      {
       var id = event.id;
       $.ajax({
-       url:"delete.php",
+       url:"deleteCalendario.php",
        type:"POST",
        data:{id:id},
        success:function()
