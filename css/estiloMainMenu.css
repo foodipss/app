@@ -1,0 +1,34 @@
+
+	body,html
+	{
+	height:100%;
+	}
+
+    * {
+            padding: 0px;
+            margin: 0px;
+    }
+
+    .menu ul {
+            list-style: none;
+            font-size: 20px;
+        }
+    .menu ul li{
+            padding: 15px 0 15px 15px;
+            position: relative;
+            background-color: #363636;
+            cursor: pointer;
+            border-top: 2px solid #BDC3C7;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        
+    .menu ul li:hover{
+        background-color: #FFB90F;
+    }
+    .menu ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+    

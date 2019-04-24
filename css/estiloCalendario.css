@@ -1,0 +1,16 @@
+#calendar{
+
+    width: 65%;
+    height: 50%;
+    text-align: center;
+	position: relative;
+	right: -100px;
+  margin-top: 10px;
+  
+    font-size: 15px;
+    font-family: Arial;
+	
+    background-image: linear-gradient(#fff, #d3d3d3);
+}
+
+
