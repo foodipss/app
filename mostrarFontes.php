@@ -49,7 +49,7 @@ $result = $conn->query($sql);
   <a href="editFonte.php?idfonte=<?php echo $row['idfonte'];?>">Editar Informações </a>
 </td>
   <td>
-  <a href="apagarFonte.php?idfonte=<?php echo $row['idfonte'];?>">Apagar Voluntário </a>
+  <a href="apagarFonte.php?idfonte=<?php echo $row['idfonte'];?>">Apagar Fonte </a>
 </td>
 
 <?php } ?>
