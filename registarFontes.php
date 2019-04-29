@@ -12,7 +12,7 @@
     <p>
   </header>
 
-<form action="queryRegistarFonte.php" method="post" align="right">
+<form action="queryRegistarFonte.php" method="post">
   Nome da Fonte: <input type="text" name="nomefonte">
                   <br/>
   Morada da Fonte: <input type ="text" name="moradafonte">
