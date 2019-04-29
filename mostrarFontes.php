@@ -11,7 +11,7 @@ $conn = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0
   if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
   } 
-$sql = "SELECT idfonte, nomefonte, moradafonte, emailfonte, contactofonte FROM fonte WHERE visivel='1'";
+$sql = "SELECT idfonte, nomefonte, moradafonte, emailfonte, contactofonte FROM fonte WHERE visivel='1' ORDER BY nomefonte";
 $result = $conn->query($sql);
   ?>
 
