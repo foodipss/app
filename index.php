@@ -12,7 +12,7 @@
 			<li><a href="mostrarFontes.php"><span class="fa fa-home"></span>    Fontes</a></li>
 			<li><a href="pesquisar.php"><span class="fa fa-bars"></span>    Tupperwares</a></li>
 			<li><a href="refeicoes.php"><span class="fa fa-cutlery"></span>    Refeições</a></li>
-			<li><a href="lista_benefeciario.php"><span class="fa fa-address-card"></span>    Beneficiários</a></li>
+			<li><a href="lista_beneficiario.php"><span class="fa fa-address-card"></span>    Beneficiários</a></li>
 			<li><a href="lista_voluntario.php"><span class="fa fa-users"></span>    Voluntários</a></li>
 			<li><a href="indexCalendario.php"><span class="fa fa-calendar"></span>    Turnos</a></li>
 			<li><a href="analise.php"><span class="fa fa-bar-chart"></span>    Análises</a></li>
