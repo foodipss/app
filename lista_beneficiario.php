@@ -26,7 +26,7 @@
 <?php
 require('conexao_perfil.php');
 
-$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, codigo_beneficiario FROM beneficiario where visivel='1'";
+$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, codigo_beneficiario FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario";
 
 $resultado=$mysqli->query($query);
 
