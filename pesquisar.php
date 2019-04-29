@@ -34,18 +34,19 @@ include_once("conexaoPesquisa.php");
 		<br>
 		<form method="POST" action="">
 			<label class="btn warning btn-lg">Beneficiário: </label>
-			<select class="btn btn-default btn-lg" name="codigo_beneficiario">
+			<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
+			<datalist id="browsers" >
 			<?php 
 			
-			$result = $conn->query("SELECT codigo_beneficiario FROM beneficiario WHERE visivel='1'");
+			$result = $conn->query("SELECT codigo_beneficiario, nome FROM beneficiario WHERE visivel='1'");
 			
 			while($rows = $result->fetch_assoc()) {
 				$codigo = $rows['codigo_beneficiario'];
-			    //$nome = $rows['nome'];
-				echo "<option value='codigo_beneficiario'>$codigo</option>";
+			    $nome = $rows['nome'];
+				echo "<option value='$codigo'>$nome</option>";
 			}
 			?>	
-			</select>
+			</datalist>
 			<br>
 			<!--<a href="listar2.php">Todos</a><br>--> 
 			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
