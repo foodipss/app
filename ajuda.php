@@ -16,7 +16,7 @@
 
 <body> 
 
-<?php require_once "MenuInicial.php"; ?>
+<?php require_once "index.php"; ?>
 
     <h3 align="center" style="font-size:30px">Manual de Utilizador</h3>
 <h4  style="font-size:15px">O presente documento consolida a informacao necessaria a utilizacao da plataforma web REFOOD Guimaraes</h4>
