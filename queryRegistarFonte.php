@@ -17,6 +17,6 @@ else
 	echo 'Inserted';
 }
 
-header("refresh:2; url=mostrarfontes.php");
+header("refresh:2; url=mostrarFontes.php");
 
 ?>
