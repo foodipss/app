@@ -14,7 +14,7 @@ $resultado=$conn->query($query);
 	<body>
 		<center>
 		<?php
-		echo "<script> alert('Editado com sucesso!');top.location.href='mostrarFontes.php';</script>";
+		echo "<script> alert('Apagado com sucesso!');top.location.href='mostrarFontes.php';</script>";
 		if($resultado>0){
 			?>
 	
