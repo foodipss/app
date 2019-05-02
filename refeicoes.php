@@ -14,7 +14,7 @@ include_once("conexaoPesquisa.php");
 	<body>
 		<?php require_once "index.php"; ?>
 
-		<table style="width:100%;border=1px">
+		<table style="width:100%">
 			<tr style="padding: 25px">
 				<th style="padding: 25px">Beneficiário</th>
 				<th style="padding: 25px">Histórico</th>
@@ -32,7 +32,7 @@ include_once("conexaoPesquisa.php");
 						while($rows = $result->fetch_assoc()) {
 							$codigo = $rows['codigo_beneficiario'];
 							$nome = $rows['nome'];
-							echo "<option value='$codigo'>$nome</option>";
+							echo "<option value='$nome'>$nome</option>";
 						}
 						?>	
 						</datalist>
