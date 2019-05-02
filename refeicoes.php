@@ -32,7 +32,7 @@ include_once("conexaoPesquisa.php");
 						while($rows = $result->fetch_assoc()) {
 							$codigo = $rows['codigo_beneficiario'];
 							$nome = $rows['nome'];
-							echo "<option value='$nome'>$nome</option>";
+							echo "<option value='$codigo'>$nome</option>";
 						}
 						?>	
 						</datalist>
