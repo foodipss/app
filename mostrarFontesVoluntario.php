@@ -27,7 +27,6 @@ $result = $conn->query($sql);
   <th>Morada</th> 
   <th>Email</th>
   <th>Contacto</th>
-  <th colspan=2>Operações</th>
  </tr>
     </thead>
 <tbody>
