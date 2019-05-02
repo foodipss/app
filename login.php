@@ -100,7 +100,7 @@ if (isset($_GET['logout']) || isset($_POST['canc'])) {
             if ($_SESSION['tipo_utilizador'] == 'Administrador') {
 					header ("Location: index.php");
             } else if ($_SESSION['tipo_utilizador'] == 'Voluntario') {
-					header ("Location: index.php");
+					header ("Location: indexVoluntario.php");
         
         
     } else {
