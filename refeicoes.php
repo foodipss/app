@@ -14,7 +14,7 @@ include_once("conexaoPesquisa.php");
 	<body>
 		<?php require_once "index.php"; ?>
 
-		<table style="width:100%">
+		<table padding: 25px; style="width:100%">
 			<tr>
 				<th>Beneficiário</th>
 				<th>Histórico</th> 
