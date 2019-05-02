@@ -14,14 +14,14 @@ include_once("conexaoPesquisa.php");
 	<body>
 		<?php require_once "index.php"; ?>
 
-		<table style="width:100%;padding: 25px; border=1">
-			<tr>
+		<table style="width:100%;padding:25px;border:5">
+			<tr style="padding: 25px">
 				<th style="padding: 25px">Beneficiário</th>
 				<th style="padding: 25px">Histórico</th>
 				<th style="padding: 25px">Cesto</th>
 			</tr>
-			<tr>
-				<td>
+			<tr style="padding: 25px">
+				<td style="padding: 25px">
 					<form method="POST" action="">
 						<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
 						<datalist id="browsers" >
@@ -38,8 +38,8 @@ include_once("conexaoPesquisa.php");
 						</datalist>
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form></td>
-				<td>linha 1 coluna 2</td>
-				<td>linha 1 coluna 3</td>
+				<td style="padding: 25px">linha 1 coluna 2</td>
+				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
 			<tr>
 				<td>linha 2 coluna 1</td>
