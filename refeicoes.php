@@ -75,19 +75,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <body>
 
 <h2>Search/Filter Dropdown</h2>
-<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
 
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Selecionar</button>
   <div id="myDropdown" class="dropdown-content">
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
+    <br>
+		<form method="POST" action="">
+			<label class="btn warning btn-lg">Beneficiário:</label>
+			<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
+			<datalist id="browsers" >
+			<?php 
+			
+			$result = $conn->query("SELECT codigo_beneficiario, nome FROM beneficiario WHERE visivel='1'");
+			
+			while($rows = $result->fetch_assoc()) {
+				$codigo = $rows['codigo_beneficiario'];
+			    $nome = $rows['nome'];
+				echo "<option value='$codigo'>$nome</option>";
+			}
+			?>	
+			</datalist>
+			<br>
+			<!--<a href="listar2.php">Todos</a><br>--> 
+			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
+		</form><br>
   </div>
 </div>
 
