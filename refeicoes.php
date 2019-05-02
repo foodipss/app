@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+session_start();
+include_once("conexaoPesquisa.php");
+?>
+
 <html>
 <title>REFOOD</title>
 <meta charset="UTF-8">
