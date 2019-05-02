@@ -21,41 +21,31 @@ include_once("conexaoPesquisa.php");
 				<th>Cesto</th>
 			</tr>
 			<tr>
-				<td>Jill</td>
-				<td>Smith</td>
-				<td>50</td>
+				<td>
+					<form method="POST" action="">
+						<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
+						<datalist id="browsers" >
+						<?php 
+			
+						$result = $conn->query("SELECT codigo_beneficiario, nome FROM beneficiario WHERE visivel='1'");
+			
+						while($rows = $result->fetch_assoc()) {
+							$codigo = $rows['codigo_beneficiario'];
+							$nome = $rows['nome'];
+							echo "<option value='$codigo'>$nome</option>";
+						}
+						?>	
+						</datalist>
+						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
+					</form></td>
+				<td>linha 1 coluna 2</td>
+				<td>linha 1 coluna 3</td>
 			</tr>
 			<tr>
-				<td>Eve</td>
-				<td>Jackson</td>
-				<td>94</td>
-			</tr>
-			<tr>
-				<td>John</td>
-				<td>Doe</td>
-				<td>80</td>
+				<td>linha 2 coluna 1</td>
+				<td>linha 2 coluna 2</td>
+				<td>linha 2 coluna 3</td>
 			</tr>
 		</table>
-		
-    <br>
-		<form method="POST" action="">
-			<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
-			<datalist id="browsers" >
-			<?php 
-			
-			$result = $conn->query("SELECT codigo_beneficiario, nome FROM beneficiario WHERE visivel='1'");
-			
-			while($rows = $result->fetch_assoc()) {
-				$codigo = $rows['codigo_beneficiario'];
-			    $nome = $rows['nome'];
-				echo "<option value='$codigo'>$nome</option>";
-			}
-			?>	
-			</datalist>
-			<br>
-			<!--<a href="listar2.php">Todos</a><br>--> 
-			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
-		</form><br>
-
 </body>
 </html>
