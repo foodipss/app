@@ -10,17 +10,33 @@ include_once("conexaoPesquisa.php");
 <link rel="stylesheet" href="css/estilo.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
 
-<body class="w3-light-grey">
-<?php require_once "index.php"; ?>
+	<body>
+		<?php require_once "index.php"; ?>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-
+		<table style="width:100%">
+			<tr>
+				<th>Beneficiário</th>
+				<th>Histórico</th> 
+				<th>Cesto</th>
+			</tr>
+			<tr>
+				<td>Jill</td>
+				<td>Smith</td>
+				<td>50</td>
+			</tr>
+			<tr>
+				<td>Eve</td>
+				<td>Jackson</td>
+				<td>94</td>
+			</tr>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>80</td>
+			</tr>
+		</table>
+		
     <br>
 		<form method="POST" action="">
 			<input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
