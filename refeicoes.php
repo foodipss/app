@@ -9,6 +9,7 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+
 <body class="w3-light-grey">
 <?php require_once "index.php"; ?>
 
@@ -73,8 +74,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 </head>
 <body>
-
-<h2>Search/Filter Dropdown</h2>
 
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Selecionar</button>
