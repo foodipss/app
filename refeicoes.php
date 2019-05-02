@@ -14,7 +14,7 @@ include_once("conexaoPesquisa.php");
 	<body>
 		<?php require_once "index.php"; ?>
 
-		<table style="width:100%;padding:25px;border:5">
+		<table style="width:100%;border=1px">
 			<tr style="padding: 25px">
 				<th style="padding: 25px">Beneficiário</th>
 				<th style="padding: 25px">Histórico</th>
@@ -41,10 +41,10 @@ include_once("conexaoPesquisa.php");
 				<td style="padding: 25px">linha 1 coluna 2</td>
 				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
-			<tr>
-				<td>linha 2 coluna 1</td>
-				<td>linha 2 coluna 2</td>
-				<td>linha 2 coluna 3</td>
+			<tr style="padding: 25px">
+				<td style="padding: 25px">linha 2 coluna 1</td>
+				<td style="padding: 25px">linha 2 coluna 2</td>
+				<td style="padding: 25px">linha 2 coluna 3</td>
 			</tr>
 		</table>
 </body>
