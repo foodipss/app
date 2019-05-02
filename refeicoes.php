@@ -14,11 +14,11 @@ include_once("conexaoPesquisa.php");
 	<body>
 		<?php require_once "index.php"; ?>
 
-		<table padding: 25px; style="width:100%">
+		<table style="width:100%;padding: 25px; border=1">
 			<tr>
-				<th>Beneficiário</th>
-				<th>Histórico</th> 
-				<th>Cesto</th>
+				<th style="padding: 25px">Beneficiário</th>
+				<th style="padding: 25px">Histórico</th>
+				<th style="padding: 25px">Cesto</th>
 			</tr>
 			<tr>
 				<td>
