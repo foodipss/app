@@ -38,7 +38,59 @@ include_once("conexaoPesquisa.php");
 						</datalist>
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form></td>
-				<td style="padding: 25px">linha 1 coluna 2</td>
+				<td style="padding: 25px">
+							<table id="tabela" class="display" style="width:100%">
+			
+		
+			<?php
+		$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+		if($SendPesqUser){
+			$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_NUMBER_INT);
+			$resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
+			$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
+			$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
+		
+			$result_row_tupperware = "SELECT b.nome, b.telefone, t.quantidadeLevou, t.quantidadeEntregue, t.isRecolha, t.data from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc";
+			$resultado_row_tupperware = mysqli_query($conn, $result_row_tupperware) or die(mysqli_error($conn));
+			
+			$resultado = mysqli_query($conn, "SELECT sum(quantidadeLevou), sum(quantidadeEntregue) from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc");
+    		//$linhas = mysqli_num_rows($resultado);
+ 
+ 			$saldo = 0;
+		    while($linhas = mysqli_fetch_array($resultado)){			
+				$saldo = $linhas["sum(quantidadeLevou)"] - $linhas["sum(quantidadeEntregue)"];					
+				};
+			?>
+
+			<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
+			<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+			<p style='color:red'> <b>Tupperwares em Falta:</b> <?php echo $saldo;?></p>
+			<br>
+			<tr>
+				<td>Data</td>
+				<td>Entregou?</td>
+				<td>Quantidade entregue</td>
+				<td>Levou</td>
+			</tr>
+
+			<?php
+			$result_row_tupperware = "SELECT b.nome, b.telefone, t.quantidadeLevou, t.quantidadeEntregue, t.isRecolha, t.data from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc";
+			$resultado_row_tupperware = mysqli_query($conn, $result_row_tupperware) or die(mysqli_error($conn));
+			
+			while($row_row_tupperware = mysqli_fetch_assoc($resultado_row_tupperware)){
+			?>
+			 <tr>
+				<td><?php echo $row_row_tupperware['data'];  ?></td>
+				<td><?php if($row_row_tupperware['isRecolha']=="1"){echo "Sim";}else{echo "Não";}; ?></td>
+				<td><?php echo $row_row_tupperware['quantidadeEntregue']; ?></td>
+				<td><?php echo $row_row_tupperware['quantidadeLevou']; ?></td>
+			</tr>
+						
+			<?php
+			}
+			?>
+			</table>
+				</td>
 				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
 		</table>
