@@ -83,7 +83,7 @@
 				$("#ModalEventos").modal();
 					
 			},
-			 events:'http://localhost:9080/Calendario/eventos.php',
+			 events:'https://github.com/foodipss/app/edit/master/turnoCalendario.php',
 			
 			eventClick:function(calEvent,jsEvent,view){
 							
