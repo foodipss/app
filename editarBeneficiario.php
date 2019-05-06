@@ -27,12 +27,11 @@ session_start();
   
   $idBeneficiario=$_GET['idBeneficiario'];
   
-  $query="SELECT idBeneficiario, codigo_beneficiario, nome, morada, telefone, nr_elementos_agregado FROM beneficiario WHERE idBeneficiario='$idBeneficiario'";
+  $query="SELECT idBeneficiario, codigo_beneficiario, nome, morada, telefone, nr_elementos_agregado, restricoes FROM beneficiario WHERE idBeneficiario='$idBeneficiario'";
   
   $resultado=$mysqli->query($query);
   
   $row=$resultado->fetch_assoc();
-
 ?>
 
 
@@ -70,6 +69,12 @@ session_start();
   <tr>
     <td width="20"><b>Número Elementos Agregado</b></td>
     <td width="30"><input type="text" name="nr_elementos_agregado" size="25" value="<?php echo $row['nr_elementos_agregado']; ?>"/>
+    </td>
+  </tr>
+
+    <tr>
+    <td width="20"><b>Restrições Alimentares</b></td>
+    <td width="30"><input type="text" name="restricoes" size="25" value="<?php echo $row['restricoes']; ?>"/>
     </td>
   </tr>
 

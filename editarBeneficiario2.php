@@ -8,9 +8,10 @@ $nome=$_POST['nome'];
 $telefone=$_POST['telefone'];
 $morada=$_POST['morada'];
 $nr_elementos_agregado=$_POST['nr_elementos_agregado'];
+$restricoes=$_POST['restricoes'];
 
 
-$query="UPDATE beneficiario SET  codigo_beneficiario='$codigo_beneficiario', nome='$nome', telefone='$telefone', morada='$morada', nr_elementos_agregado='$nr_elementos_agregado' WHERE idBeneficiario= '$idBeneficiario'";
+$query="UPDATE beneficiario SET  codigo_beneficiario='$codigo_beneficiario', nome='$nome', telefone='$telefone', morada='$morada', nr_elementos_agregado='$nr_elementos_agregado', restricoes='$restricoes' WHERE idBeneficiario= '$idBeneficiario'";
 
 $resultado=$mysqli->query($query);
 

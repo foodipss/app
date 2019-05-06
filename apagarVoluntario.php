@@ -1,6 +1,6 @@
 <?php
 
-require('conexao_perfil.php');
+require('conexao.php');
 
 $idVoluntario=$_GET['idVoluntario'];
 

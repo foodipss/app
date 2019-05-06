@@ -26,7 +26,7 @@
 <?php
 require('conexao_perfil.php');
 
-$query="SELECT idVoluntario, codigoVoluntario, nome, telefone FROM voluntario where visivel='1' ORDER BY codigoVoluntario";
+$query="SELECT idVoluntario, codigoVoluntario, nome, telefone FROM voluntario where visivel='1'";
 
 $resultado=$mysqli->query($query);
 

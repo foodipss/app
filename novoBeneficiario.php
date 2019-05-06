@@ -19,7 +19,7 @@ session_start();
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-  <center> <h5><b><i class="fa fa-dashboard"></i> Registar Novo Voluntário </b></h5></center>
+  <center> <h5><b><i class="fa fa-dashboard"></i> Registar Novo Beneficiario </b></h5></center>
   </header>
 
   
@@ -29,7 +29,7 @@ session_start();
                         <td>    <div class="form-group">
                                 
                                 <label for='codigo_beneficiario'>Código Beneficiário</label>
-                                <input type="text" name="codigo_beneficiario" class="form-control" id="codigo_beneficiario" placeholder="Código Beneficiário">
+                                <input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario" placeholder= "Código Beneficiário">
                        </div>
                         </td>
 
@@ -67,13 +67,25 @@ session_start();
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label for="telefone">Número Elementos Agregado</label>
+                                <label for="nr_elementos_agregado">Número Elementos Agregado</label>
                                 <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" placeholder="Nr Elementos Agregado">
                             </div>
                        </td>
+                     </tr>
 
-                    </tr>
-                    
+
+                      <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="restricoes">Restricoes Alimentares</label>
+                                <input name="restricoes" class="form-control" id="restricoes" placeholder="Restricoes Alimentares">
+                            </div>
+                       </td>
+                     </tr>
+
+
+
+                 
                   
                 </table>
                 <p></p>

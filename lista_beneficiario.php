@@ -25,11 +25,9 @@
 <!-- Ligação Base de dados -->
 <?php
 require('conexao_perfil.php');
-
-$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, codigo_beneficiario FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario";
+$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT 10";
 
 $resultado=$mysqli->query($query);
-
 ?>
 
 
@@ -45,6 +43,7 @@ $resultado=$mysqli->query($query);
         <th>Morada</th>
         <th>Telefone</th>
         <th>Número Elementos Agregado</th>
+        <th>Restrições Alimentares</th>
       </tr>
     </thead>
 <tbody>
@@ -64,6 +63,9 @@ $resultado=$mysqli->query($query);
       <td>
       <?php echo $row['nr_elementos_agregado'];?>
       </td>
+      <td>
+      <?php echo $row['restricoes'];?>
+      </td>
 
 <td>
 	<a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>">Editar Informações </a>
@@ -75,9 +77,6 @@ $resultado=$mysqli->query($query);
 <?php } ?>
 
 </tbody>
-
-
-
 </table>
 </div>
 </body>
