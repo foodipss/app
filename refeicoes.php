@@ -39,7 +39,24 @@ include_once("conexaoPesquisa.php");
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form></td>
 				<td style="padding: 25px">
-					
+							<table id="tabela" class="display" style="width:100%">
+			
+		
+			<?php
+		$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+		if($SendPesqUser){
+			$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_NUMBER_INT);
+			$resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
+			$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
+			$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
+		
+			$result_row_row_beneficiario = "SELECT b.nome, b.telefone where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc";
+			$resultado_row_tupperware = mysqli_query($conn, $result_row_tupperware) or die(mysqli_error($conn)); 
+			?>
+
+			<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
+			<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+			</table>
 				</td>
 				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
