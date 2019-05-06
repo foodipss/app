@@ -98,9 +98,9 @@ if (isset($_GET['logout']) || isset($_POST['canc'])) {
         if ($dados) {
             $valido = TRUE;
             if ($_SESSION['tipo_utilizador'] == 'Administrador') {
-					header ("Location: analises.php");
+					header ("Location: analise.php");
             } else if ($_SESSION['tipo_utilizador'] == 'Voluntario') {
-					header ("Location: analises2.php");
+					header ("Location: analise2.php");
         
         
     } else {
