@@ -48,7 +48,6 @@ include_once("conexaoPesquisa.php");
 			?>	
 			</datalist>
 			<br>
-			<!--<a href="listar2.php">Todos</a><br>--> 
 			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 		</form><br>
 
@@ -58,7 +57,7 @@ include_once("conexaoPesquisa.php");
 			<?php
 		$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 		if($SendPesqUser){
-			$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_NUMBER_INT);
+			$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
 			$resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
 			$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
 			$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
@@ -67,7 +66,7 @@ include_once("conexaoPesquisa.php");
 			$resultado_row_tupperware = mysqli_query($conn, $result_row_tupperware) or die(mysqli_error($conn));
 			
 			$resultado = mysqli_query($conn, "SELECT sum(quantidadeLevou), sum(quantidadeEntregue) from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc");
-    		//$linhas = mysqli_num_rows($resultado);
+ 
  
  			$saldo = 0;
 		    while($linhas = mysqli_fetch_array($resultado)){			
@@ -103,14 +102,6 @@ include_once("conexaoPesquisa.php");
 			}
 			?>
 			</table>
-
-					
-		<?php
-		//if(isset($_SESSION['msg'])){
-		//echo $_SESSION['msg'];
-		//unset($_SESSION['msg']);
-		//}
-		?>
 		<form method="POST" action="proc_registar.php">
 			<br>
 			<label>Beneficiario: </label>
