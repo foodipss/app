@@ -32,7 +32,7 @@
             text-decoration: none;
         }
     
-.menu col-xs-2 a.active {
+.active {
   background-color: #4CAF50;
   color: white;
 }
