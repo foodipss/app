@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$pdo=new PDO("mysql:dbname=test;host=127.0.0.1:3306","root","");
+$pdo=new PDO("mysql:dbname=heroku_af588fa1a66d1f3;host=us-cdbr-iron-east-03.cleardb","b74a37105022bd","");
 
 $accion= (isset($_GET['accion']))?$_GET['accion']:'leer';
 
