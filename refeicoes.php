@@ -39,10 +39,10 @@ include_once("conexaoPesquisa.php");
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form></td>
 				<td style="padding: 25px">
-							<table id="tabela" class="display" style="width:100%">
 			
 		
 			<?php
+			
 		$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 		if($SendPesqUser){
 			$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_NUMBER_INT);
@@ -56,7 +56,6 @@ include_once("conexaoPesquisa.php");
 
 			<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
 			<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
-			</table>
 				</td>
 				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
