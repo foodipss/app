@@ -9,7 +9,7 @@
 <body>
 	<div class="menu col-xs-2">
 		<ul>
-			<li><a href="analise.php" position: fixed><span class="fa fa-bar-chart"></span>    Análises</a></li>
+			<li><a href="analise.php"><span class="fa fa-bar-chart"></span>    Análises</a></li>
 			<li><a href="bens.php"><span class="fa fa-coffee"></span>   	Entrega de bens</a></li>
 			<li><a href="refeicoes.php"><span class="fa fa-cutlery"></span>    Preparação de refeições</a></li>
 			<li><a href="pesquisar.php"><span class="fa fa-bars"></span>    Entrega de refeições</a></li>
