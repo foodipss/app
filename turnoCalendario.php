@@ -1,6 +1,13 @@
 <?php
 header('Content-Type: application/json');
-$pdo=new PDO("mysql:dbname=heroku_af588fa1a66d1f3;host=us-cdbr-iron-east-03.cleardb.net:3306","b74a37105022bd","");
+
+$hostname = 'us-cdbr-iron-east-03.cleardb.net';
+$username = 'b74a37105022bd';
+$password = 'c0139137';
+$database = 'heroku_af588fa1a66d1f3';
+$conexao = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+		   
+
 
 $accion= (isset($_GET['accion']))?$_GET['accion']:'leer';
 
