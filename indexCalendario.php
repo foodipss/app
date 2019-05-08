@@ -159,7 +159,7 @@
 						<label>Hora Inicio:</label>
 					
 					<div class="input-group clockpicker" data-autoclose="true">	
-						<input type="text" id="txtHora" value="10:30" class="form-control"/>
+						<input type="text" id="txtHora" value="11:00" class="form-control"/>
 					</div>	
 						
 						
