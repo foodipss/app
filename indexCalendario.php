@@ -232,7 +232,7 @@ function RecolectarDatosGUI(){
 function EnviarInformacion(accion,objEvento,modal){
 	$.ajax({
 		type:'POST',
-		url:'eventos.php?accion='+accion,
+		url:'turnoCalendario.php?accion='+accion,
 		data:objEvento,
 		success:function(msg){
 			if(msg){
