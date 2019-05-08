@@ -83,7 +83,7 @@
 				$("#ModalEventos").modal();
 					
 			},
-			 events:'http://foodipss.herokuapp.com/turnoCalendario.php',
+			 events:'https://foodipss.herokuapp.com/turnoCalendario.php',
 			
 			eventClick:function(calEvent,jsEvent,view){
 							
