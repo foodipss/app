@@ -38,12 +38,6 @@ include_once("conexaoPesquisa.php");
 						</datalist>
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form>
-				</td> 
-					
-				<td style="padding: 25px">
-				
-					<p><b>Benefiário</b></p>
-					<p><b>Contacto</b></p>
 					
 					<?php
 						$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -53,11 +47,13 @@ include_once("conexaoPesquisa.php");
 							$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
 							$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
 					?>
-			
-					<p> <b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
-					<p> <b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+					
+				</td> 
+					
+				<td style="padding: 25px">
 				
-
+					<p><b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
+					<p><b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
 					
 				</td>
 				
