@@ -52,8 +52,8 @@ include_once("conexaoPesquisa.php");
 					
 				<td style="padding: 25px">
 				
-					<p><b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
-					<p><b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+					<b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?>
+					<b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?>
 					
 				</td>
 				
