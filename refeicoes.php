@@ -68,40 +68,11 @@ include_once("conexaoPesquisa.php");
 
 						<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
 						<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
-
-			<?php
-			$result_row_beneficiario = "SELECT b.nome, b.telefone, t.quantidadeLevou, t.quantidadeEntregue, t.isRecolha, t.data from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc";
-			$resultado_row_beneficiario = mysqli_query($conn, $result_row_beneficiario) or die(mysqli_error($conn));
-			
-			while($row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario)){
-			?>
-			 <tr>
-				<td><?php echo $row_row_beneficiario['data'];  ?></td>
-				<td><?php if($row_row_beneficiario['isRecolha']=="1"){echo "Sim";}else{echo "Não";}; ?></td>
-				<td><?php echo $row_row_beneficiario['quantidadeEntregue']; ?></td>
-				<td><?php echo $row_row_beneficiario['quantidadeLevou']; ?></td>
-			</tr>
 						
-			<?php
-			}
-			?>
-			</table>
-		<form method="POST" action="proc_registar.php">
-			<br>
-			<label>Beneficiario: </label>
-			<input name="idBeneficiario" value="<?php echo $row_row_beneficiario['idBeneficiario'];?>"><br><br>
-			<label>A entregar: </label>
-			<input name="quantidadeEntregue" value="<?php echo $saldo;?>"><br><br>
-			<label>Levou: </label>
-			<input name="quantidadeLevou" value=""><br><br>
-
-			<button type="submit" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Registar</button>
-		</form>			
-		<?php
-		}
-		?>
+						</table>
 					
 				</td>
+			</tr>
 				
 				<td style="padding: 25px">linha 1 coluna 3</td>
 			</tr>
