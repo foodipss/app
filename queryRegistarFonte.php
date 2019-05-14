@@ -2,6 +2,16 @@
 
 $db = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");
 
+
+$query = "SELECT codigo_fonte FROM fonte WHERE codigo_fonte = $cdfonte%";
+if(mysql_num_rows($query) > 0)
+{
+echo 'já existe este codigo fonte';
+}
+else
+{
+	
+	
 $nomefonte = $_POST['nomefonte'];
 $codigo_fonte = $_POST['codigo_fonte'];
 $moradafonte = $_POST['moradafonte'];
@@ -20,4 +30,5 @@ else
 
 header("refresh:2; url=mostrarFontes.php");
 
+}
 ?>
