@@ -17,6 +17,7 @@
                   <br/>
   Código Fonte: <input type="text" name="codigo_fonte" value = F>
                   <br/>
+  <?php SELECT * FROM fonte ORDER BY codigo_fonte DESC LIMIT 1 ?>
   Morada da Fonte: <input type ="text" name="moradafonte">
                   <br/>
   Email da Fonte: <input type="text" name="emailfonte">
