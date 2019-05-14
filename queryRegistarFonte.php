@@ -4,7 +4,7 @@ $db = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c013
 
 
 $query = "SELECT codigo_fonte FROM fonte WHERE codigo_fonte = $cdfonte%";
-if(mysql_num_rows($query) > 0)
+if(mysqli_num_rows($query) > 0)
 {
 echo 'já existe este codigo fonte';
 }
