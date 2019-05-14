@@ -41,9 +41,6 @@ include_once("conexaoPesquisa.php");
 				</td>
 					
 				<td style="padding: 25px">
-				
-					<p><b>Benefiário</b></p>
-					<p><b>Contacto</b></p>
 					
 					<?php
 						$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -55,8 +52,8 @@ include_once("conexaoPesquisa.php");
 						}
 					?>
 					
-					<p> <b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
-					<p> <b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+					<p><b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
+					<p><b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
 					
 				</td>
 				
