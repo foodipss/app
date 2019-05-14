@@ -15,6 +15,8 @@
 <form action="queryRegistarFonte.php" method="post">
   Nome da Fonte: <input type="text" name="nomefonte">
                   <br/>
+  Código Fonte: <input type="text" name="codigo_fonte" value = F>
+                  <br/>
   Morada da Fonte: <input type ="text" name="moradafonte">
                   <br/>
   Email da Fonte: <input type="text" name="emailfonte">
