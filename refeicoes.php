@@ -38,6 +38,10 @@ include_once("conexaoPesquisa.php");
 						</datalist>
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form>
+					
+					<p><b>Benefiário</b></p>
+					<p><b>Contacto</b></p>
+					
 				</td>
 					
 				<td style="padding: 25px">
