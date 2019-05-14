@@ -38,22 +38,12 @@ include_once("conexaoPesquisa.php");
 						</datalist>
 						<input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" value="Pesquisar">
 					</form>
-					
-					<?php
-						$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
-						if($SendPesqUser){
-							$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-							$resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
-							$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
-							$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
-					?>
-					
-				</td> 
+				</td>
 					
 				<td style="padding: 25px">
 				
-					<b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?>
-					<b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?>
+					<p><b>Benefiário</b></p>
+					<p><b>Contacto</b></p>
 					
 				</td>
 				
