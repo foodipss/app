@@ -30,7 +30,7 @@ $result3= $conn->query($sql3);
   <body>
 
 <form action="queryRegistarBem.php" method="post">
-  Nome do bem: <input type="text" name="nomeBem">
+  Nome do bem: <input type="text" name="nomeBem" required>
                   <br/>
 
   Tipo do bem: <select name="tipoBem">
