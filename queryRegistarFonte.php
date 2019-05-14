@@ -8,10 +8,9 @@ echo 'já existe um codigo com este nome';
 }
 else
 {
-	$codigo_fonte = mysqli_real_escape_string($_POST['codigo_fonte']);
-}
+	
 $nomefonte = $_POST['nomefonte'];
-
+$codigo_fonte = mysqli_real_escape_string($_POST['codigo_fonte']);
 $moradafonte = $_POST['moradafonte'];
 $emailfonte = $_POST['emailfonte'];
 $contactofonte = $_POST['contactofonte'];
@@ -25,6 +24,8 @@ else
 {
 	echo 'Inserted';
 }
+}
+
 
 header("refresh:2; url=mostrarFontes.php");
 
