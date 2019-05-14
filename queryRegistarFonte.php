@@ -8,7 +8,7 @@ $moradafonte = $_POST['moradafonte'];
 $emailfonte = $_POST['emailfonte'];
 $contactofonte = $_POST['contactofonte'];
 
-$sql = "INSERT INTO fonte (nomefonte, codigo_fonte, moradafonte, emailfonte, contactofonte) VALUES ('$nomefonte','$codigo_fonte' '$moradafonte', '$emailfonte', '$contactofonte')";
+$sql = "INSERT INTO fonte (nomefonte, codigo_fonte, moradafonte, emailfonte, contactofonte) VALUES ('$nomefonte','$codigo_fonte', '$moradafonte', '$emailfonte', '$contactofonte')";
 
 if(!mysqli_query($db, $sql)) {
 	echo 'Not Inserted';
