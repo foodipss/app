@@ -13,15 +13,15 @@
   </header>
 
 <form action="queryRegistarFonte.php" method="post">
-  Nome da Fonte: <input type="text" name="nomefonte">
+  Nome da Fonte: <input type="text" name="nomefonte" required>
                   <br/>
-  Código Fonte: <input type="text" name="codigo_fonte" value = F>
+  Código Fonte: <input type="text" name="codigo_fonte" value = F required>
                   <br/>
-  Morada da Fonte: <input type ="text" name="moradafonte">
+  Morada da Fonte: <input type ="text" name="moradafonte" required>
                   <br/>
-  Email da Fonte: <input type="text" name="emailfonte">
+  Email da Fonte: <input type="text" name="emailfonte" required>
                   <br/>
-  Telefone da Fonte: <input type="text" name="contactofonte">
+  Telefone da Fonte: <input type="text" name="contactofonte" required>
                   <br/>
                   <input type="submit" value="Insert">
 </form>       
