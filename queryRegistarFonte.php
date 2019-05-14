@@ -13,7 +13,7 @@ else
 	
 	
 $nomefonte = $_POST['nomefonte'];
-$codigo_fonte = $_POST['codigo_fonte'];
+$codigo_fonte = mysql_real_escape_string($_POST['codigo_fonte']);
 $moradafonte = $_POST['moradafonte'];
 $emailfonte = $_POST['emailfonte'];
 $contactofonte = $_POST['contactofonte'];
