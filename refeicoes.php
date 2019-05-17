@@ -57,7 +57,7 @@ include_once("conexaoPesquisa.php");
 					
 				</td>
 				
-				<td style="padding: 25px">linha 1 coluna 3</td>
+				<td style="padding: 25px">LINHA 1 COLUNA 3</td>
 			</tr>
 		</table>
 		
