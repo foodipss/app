@@ -27,7 +27,7 @@ $itens_por_pagina = 5;
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
 
 
-$sql = "SELECT idfonte, nomefonte, moradafonte, emailfonte, contactofonte FROM fonte WHERE visivel='1' ORDER BY nomefonte  LIMIT $inicio, $itens_por_pagina";
+$sql = "SELECT * FROM fonte WHERE visivel='1' ORDER BY codigo_fonte  LIMIT $inicio, $itens_por_pagina";
   
 $result = $conn->query($sql) or die($conn->error);;
   
@@ -47,6 +47,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
     <thead>
       <tr>
+         <th>Código da Fonte</th>
          <th>Nome</th> 
   <th>Morada</th> 
   <th>Email</th>
@@ -57,6 +58,8 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 <tbody>
     <?php while($row=$result->fetch_assoc()){?>
       <tr>
+         <td><?php echo $row['codigo_fonte'];?>
+      </td>
       <td><?php echo $row['nomefonte'];?>
       </td>
       <td>
