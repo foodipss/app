@@ -17,21 +17,27 @@ include_once("conexaoPesquisa.php");
     <br>
 
     <?php 
+     
+      $lista = array();
+      $devia = array();
+      $cor= array(); 
+      
+      $cor[0] = '#76A7FA';
+      $cor[1] = '#silver';
+      $cor[2] = '#gold';
+      $cor[3] = '#e5e4e2';
+      $cor[4] = '#e5e4e2';
+      $i = 0;
+      $sql = "SELECT b.codigo_beneficiario, t.deviaOntem from beneficiario b, tupperware t where b.idBeneficiario = t.idBeneficiario order by t.deviaOntem desc";
+      $resultado = $conn->query($sql);
+      while ($row = mysqli_fetch_object($resultado)) {
 
-      $codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-      $resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
-      $resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
-      $row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
-    
-      $result_row_tupperware = "SELECT b.nome, b.telefone, t.quantidadeLevou, t.quantidadeEntregue, t.isRecolha, t.data from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc";
-      $resultado_row_tupperware = mysqli_query($conn, $result_row_tupperware) or die(mysqli_error($conn));
-      $resultado = mysqli_query($conn, "SELECT sum(quantidadeLevou), sum(quantidadeEntregue) from beneficiario b, tupperware t where b.codigo_beneficiario ='$codigo_beneficiario' and b.idBeneficiario = t.idBeneficiario order by t.idTupperware desc");
-        //$linhas = mysqli_num_rows($resultado);
- 
-      $maiorNumero = 0;
-        while($linhas = mysqli_fetch_array($resultado)){   
-        $maiorNumero = $linhas["sum(quantidadeLevou)"] - $linhas["sum(quantidadeEntregue)"];          
-        };
+        $codigo_beneficiario = $row->codigo_beneficiario;
+        $deviaOntem = $row->deviaOntem;
+        $lista[$i] = $codigo_beneficiario;
+        $devia[$i] = $deviaOntem;
+        $i = $i + 1;
+      }
     ?>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
@@ -39,13 +45,17 @@ include_once("conexaoPesquisa.php");
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
-        ["B12", <?php echo $maiorNumero; ?>, "color: #76A7FA"],
-        ["B2", 10.49, "silver"],
-        ["B42", 19.30, "gold"],
-        ["B6", 21.45, "color: #e5e4e2"]
-      ]);
+        ["Element", "Número de tuppware em falta", { role: "style" } ],
+              
+        <?php
+        $k = 5;
+        for ($i= 0; $i < $k; $i++) {
+        ?>
 
+            ['<?php echo $lista[$i] ?>', <?php arsort($devia); echo $devia[$i]; ?>, '<?php echo $cor[$i] ?>'],        
+
+        <?php } ?>
+      ]);
       var view = new google.visualization.DataView(data);
       view.setColumns([0, 1,
                        { calc: "stringify",
@@ -55,10 +65,10 @@ include_once("conexaoPesquisa.php");
                        2]);
 
       var options = {
-        title: "Beneficiários mais em falta",
+        title: "Beneficiários com mais tupperware em falta",
         width: 600,
         height: 400,
-        bar: {groupWidth: "95%"},
+        bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
@@ -66,9 +76,52 @@ include_once("conexaoPesquisa.php");
   }
   </script>
 
-  
+    <?php 
+     
+      $lista = array();
+      $cor= array(); 
+      
+      $cor[0] = '#76A7FA';
+      $cor[1] = '#silver';
+      $cor[2] = '#gold';
+      $cor[3] = '#e5e4e2';
+      $cor[4] = '#e5e4e2';
+      
+      $resultado = mysqli_query ($conn,"SELECT count(b.idFonte), b.idFonte, f.codigo_fonte FROM bem b, fonte f where f.idFonte = b.idFonte GROUP BY f.codigo_fonte");
+           $row = mysqli_fetch_array($resultado);
+      while (count($row) == 0) {
+          $contador = $row[count("idFonte")];
+        }
+
+    ?>
+
+  <div id="columnchart_values" style="width: 50%; float: right; padding: 5px;"></div>
+
+     <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+          //['<?php $codigo_fonte ?>', <?php $contador?>],        
+
+      ]);
+        var options = {
+          title: 'Fontes',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
   <body>
-  <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+  <div id="donutchart" style="width: 50%; height: 50%; padding: 5px; "></div>
   </body>
 </html>
