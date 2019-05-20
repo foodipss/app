@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
 <title>REFOOD</title>
 
 <?php require_once "index.php"; ?>
@@ -21,7 +23,6 @@ $sql2 = "SELECT * from tipo";
 $result = $conn->query($sql);
 date_default_timezone_set('Europe/London');
 //echo "The time is " . date("h:i:sa");
-
   ?>
 
 
@@ -37,6 +38,7 @@ date_default_timezone_set('Europe/London');
   <th>Tipo</th> 
   <th>Fonte</th>
   <th>Data</th>
+  <th>Número de porções</th>
  </tr>
     </thead>
 <tbody>
@@ -52,6 +54,9 @@ date_default_timezone_set('Europe/London');
       </td>
       <td>
       <?php echo $row['data'];?>
+      </td>
+  <td>
+      <?php echo $row['porcao'];?>
       </td>
   <td>
   <a href="apagarBem.php?idBem=<?php echo $row['idBem'];?>">Apagar Bem </a>
