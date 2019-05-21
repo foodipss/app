@@ -16,6 +16,15 @@
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
+	       <style>
+
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+   </style>
    <center> <h5><b> Lista de Voluntários </b></h5></center>
     <p>
   </header>
