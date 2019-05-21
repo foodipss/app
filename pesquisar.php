@@ -48,7 +48,7 @@ include_once("conexaoPesquisa.php");
 			?>	
 			</datalist>
 			<br>
-			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" style="font-size:20px;" value="Pesquisar">
+			<br><input name="SendPesqUser" type="submit" style="font-size:20px;" value="Pesquisar">
 		</form><br>
 
 		<table id="tabela" class="display" style="width:100%">
@@ -111,7 +111,7 @@ include_once("conexaoPesquisa.php");
 			<label>Levou: </label>
 			<input name="quantidadeLevou" value=""><br><br>
 
-			<button type="submit" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Registar</button>
+			<button type="submit" data-toggle="modal" data-target="#myModal">Registar</button>
 		</form>			
 		<?php
 		}
