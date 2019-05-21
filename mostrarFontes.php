@@ -7,25 +7,7 @@
 
 
 <header class="w3-container" style="padding-top:40px">
-       <style>
 
-h5 {
-  color: black;
-  text-align: center;
-  font-family: ariana;
-  font-size: 30px;
-}
-h2 {
-    width: 20%;
-    background-color: #FFBF00;
-    color: white;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-   </style>
    <center> <h5><b> Lista de Fontes </b></h5></center>
     <p>
   </header>
@@ -59,8 +41,8 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 <body>
   <div class="colFonte">
-         <h2><a href="registarFontes.php">Registar Nova fonte</a></h2>
-  
+         <a href="registarFontes.php">Registar Nova fonte</a>
+  <br>
   <p></p>
   <table class="table">
 
