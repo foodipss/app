@@ -73,7 +73,7 @@ include_once("conexaoPesquisa.php");
 					<?php
 						$result = $conn->query("SELECT nomeBem, nome FROM bem WHERE data=subdate(current_date, 1)");
 			
-						echo $result
+						echo $result;
 					?>
 				
 				</td>
