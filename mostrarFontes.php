@@ -61,7 +61,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
   <th>Morada</th> 
   <th>Email</th>
   <th>Contacto</th>
-  <th colspan=2>Operações</th>
+  <th colspan=2></th>
  </tr>
     </thead>
 <tbody>
