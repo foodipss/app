@@ -50,7 +50,7 @@ input[type=submit]:hover {
 
 button{
 	
-	  width: 20%;
+  width: 20%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -166,7 +166,7 @@ button:hover {
 			<label>Levou: </label>
 			<input name="quantidadeLevou" value=""><br><br>
 
-			<button type="submit" data-toggle="modal" data-target="#myModal">Registar</button>
+			<button type="submit"  style="font-size:20px;>Registar</button>
 		</form>			
 		<?php
 		}
