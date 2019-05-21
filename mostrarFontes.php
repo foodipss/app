@@ -7,7 +7,15 @@
 
 
 <header class="w3-container" style="padding-top:40px">
+     <style>
 
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+   </style>
    <center> <h5><b> Lista de Fontes </b></h5></center>
     <p>
   </header>
