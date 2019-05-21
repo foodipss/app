@@ -16,7 +16,7 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-input[type=submit] {
+button[type=submit] {
   width: 50%;
   background-color: #FFBF00;
   color: white;
@@ -27,7 +27,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
   background-color: #FF8000;
 }
 
@@ -37,7 +37,7 @@ input[type=submit]:hover {
     <p>
   </header>
 
-
+<br>
 <?php
 $conn = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0139137", "heroku_af588fa1a66d1f3");;
   
