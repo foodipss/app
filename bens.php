@@ -16,15 +16,14 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-.button {
-  width: 50%;
-  background-color: #FFBF00;
-  color: white;
-  padding: 14px 20px;
-  
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+button {
+    width: 20%;
+    background-color: #FFBF00;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
    </style>
@@ -93,7 +92,7 @@ date_default_timezone_set('Europe/London');
 </table>
      
 </div>
-
+<br>
 
 <form method="get" action="registarBens.php" >
     <button type="submit">Registar bens</button>
