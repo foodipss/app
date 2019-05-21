@@ -16,8 +16,8 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-.button{
-  width: 60%;
+.button {
+  width: 50%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -25,10 +25,6 @@ h5 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.button:hover {
-  background-color: #FF8000;
 }
 
    </style>
