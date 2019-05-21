@@ -95,7 +95,7 @@ date_default_timezone_set('Europe/London');
 <br>
 
 <form method="get" action="registarBens.php" >
-    <button type="submit">Registar bens</button>
+    <button type="submit">Registar Entrega de Bens</button>
 </form>
 
  
