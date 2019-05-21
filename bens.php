@@ -80,7 +80,7 @@ date_default_timezone_set('Europe/London');
       <?php echo $row['porcao'];?>
       </td>
   <td>
-  <a href="apagarBem.php?idBem=<?php echo $row['idBem'];?>">Apagar Bem </a>
+  <a href="apagarBem.php?idBem=<?php echo $row['idBem'];?>" class="fa fa-trash-o" style="font-size:24px;color:black"></a>
 </td>
 </tr>
 <?php } ?>
