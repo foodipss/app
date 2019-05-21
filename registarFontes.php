@@ -44,6 +44,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #FF8000;
 }
+	  </style>
 
    <center> <h5>Registar Fonte</b></h5></center>
     <p>
