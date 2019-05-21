@@ -15,7 +15,7 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-.colFonte {
+h2 {
     width: 20%;
     background-color: #FFBF00;
     color: white;
@@ -59,7 +59,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 <body>
   <div class="colFonte">
-      <a href="registarFontes.php">Registar Nova fonte</a>
+         <h2><a href="registarFontes.php">Registar Nova fonte</a></h2>
   
   <p></p>
   <table class="table">
