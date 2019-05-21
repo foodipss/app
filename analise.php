@@ -76,7 +76,50 @@ include_once("conexaoPesquisa.php");
   }
   </script>
 
-   
+    <?php 
+     
+      $lista = array();
+      $cor= array(); 
+      
+      $cor[0] = '#76A7FA';
+      $cor[1] = '#silver';
+      $cor[2] = '#gold';
+      $cor[3] = '#e5e4e2';
+      $cor[4] = '#e5e4e2';
+      
+      $resultado = mysqli_query ($conn,"SELECT count(b.idFonte), b.idFonte, f.codigo_fonte FROM bem b, fonte f where f.idFonte = b.idFonte GROUP BY f.codigo_fonte");
+           $row = mysqli_fetch_array($resultado);
+      while (count($row) == 0) {
+          $contador = $row[count("idFonte")];
+        }
+
+    ?>
+
+  <div id="columnchart_values" style="width: 50%; float: right; padding: 5px;"></div>
+
+     <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+          //['<?php $codigo_fonte ?>', <?php $contador?>],        
+
+      ]);
+        var options = {
+          title: 'Fontes',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
 </head>
   <body>
   <div id="donutchart" style="width: 50%; height: 50%; padding: 5px; "></div>
