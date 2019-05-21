@@ -67,27 +67,39 @@ input[type=submit]:hover {
   <body>
 
 <form action="queryRegistarBem.php" method="post">
-  Nome do bem: <input type="text" name="nomeBem" required>
+  Nome do bem:
+	<br>
+	<input type="text" name="nomeBem" required>
                   <br/>
-  Número de porções: <input type="text" name="porcao" required>
+	<br>
+  Número de porções:
+	<br>
+	<input type="text" name="porcao" required>
                   <br/>
-  Tipo do bem: <select name="tipoBem">
+	<br>
+  Tipo do bem: 
+	<br>
+	<select name="tipoBem">
     <?php while ($row=$result2->fetch_assoc()){  
     echo "<option value='" . $row['tipo'] ."'>" . $row['tipo'] ."</option>";
   } ?>
   </select>
   <br/>
-  Fonte: <select name="idfonte">
+	<br>
+  Fonte:
+	<br>
+	<select name="idfonte">
     <?php while ($row=$result3->fetch_assoc()){  
     echo "<option value='" . $row['codigo_fonte'] ."'>" . $row['codigo_fonte'] ."</option>";
   } ?>
   </select>
   <br/>
+	<br>
 
   <input type="hidden" name="data" value="<?php echo date('d-m-Y H:i:s'); ?>" readonly="readonly">
   
 
-            <input type="submit" value="Insert">
+            <input type="submit" value="Registar Entrega de Bens">
 
 </form>       
 
