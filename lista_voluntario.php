@@ -16,7 +16,7 @@
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-   <center> <h5><b><i class="fa fa-dashboard"></i> Lista de Voluntários </b></h5></center>
+   <center> <h5><b> Lista de Voluntários </b></h5></center>
     <p>
   </header>
 
@@ -74,7 +74,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 	<a href="editarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>">Editar Informações </a>
 </td>
 	<td>
-	<a href="apagarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>">Apagar Voluntário </a>
+	<a href="apagarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>"class="fa fa-trash-o" style="font-size:24px;color:black"></a>
 </td>
 
 <?php } ?>
