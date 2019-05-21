@@ -7,6 +7,32 @@
 <?php require_once "index.php"; ?>
 
 <header class="w3-container" style="padding-top:40px">
+   
+     <style>
+
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+input[type=submit] {
+  width: 50%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FF8000;
+}
+
+   </style>
+   
    <center> <h5><b> Lista de Bens </b></h5></center>
     <p>
   </header>
