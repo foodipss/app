@@ -17,7 +17,7 @@ h5 {
   font-size: 30px;
 }
 .button{
-  width: 20%;
+  width: 40%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -91,10 +91,11 @@ date_default_timezone_set('Europe/London');
 <?php } ?>
 
 </tbody>
-<br>
+
 
 
 </table>
+     <br>
 </div>
 
 
