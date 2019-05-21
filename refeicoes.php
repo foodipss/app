@@ -62,24 +62,25 @@ include_once("conexaoPesquisa.php");
 		</table>
 		
 		<br></br>
+		<?php 
+		
+		$consulta = "SELECT nomeBem FROM bem WHERE visivel='1'";
+		$con = $conn->query($consulta) or die($conn->error);
+		?>
 		
 		<table style="width:100%">
 			<tr style="padding: 25px">
 				<th style="padding: 25px">Pratos do dia</th>
 			</tr>
+				<?php while ($dado = $con->fetch_array()) { ?>
 			<tr style="padding: 25px">
 				<td style="padding: 25px">
-				
-					<?php
-						$pratodia = "SELECT nomeBem FROM bem WHERE data=subdate(current_date, 1)";
-						$pratodia = mysqli_query($conn, $pratodia) or die(mysqli_error($conn));
-						$row_pratodia = mysqli_fetch_assoc($pratodia);
-					?>
 					
-					<p><b>Nome</b> <?php echo $row_pratodia['nomeBem'];?> </p>
+					<?php echo $dado['nomeBem'];?>
 				
 				</td>
 			</tr>
+				<?php } ?>
 		</table>
 	</body>
 </html>
