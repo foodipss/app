@@ -95,7 +95,9 @@ include_once("conexaoPesquisa.php");
 
       ]);
         var options = {
-          title: 'Fontes',
+          title: 'Fontes que doaram o maior número de bens',
+           width: 600,
+           height: 400,
           pieHole: 0.4,
         };
 
