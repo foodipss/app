@@ -74,10 +74,10 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
       </td>
 
 <td>
-  <a href="editFonte.php?idfonte=<?php echo $row['idfonte'];?>">Editar Informações </a>
+  <a href="editFonte.php?idfonte=<?php echo $row['idfonte'];?>"class="fa fa-edit" style="font-size:24px;color:black"></a>
 </td>
   <td>
-  <a href="apagarFonte.php?idfonte=<?php echo $row['idfonte'];?>">Apagar Fonte </a>
+  <a href="apagarFonte.php?idfonte=<?php echo $row['idfonte'];?>"class="fa fa-trash-o" style="font-size:24px;color:red"></a>
 </td>
 
 <?php } ?>
