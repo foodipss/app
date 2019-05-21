@@ -77,6 +77,9 @@ include_once("conexaoPesquisa.php");
 			<tr style="padding: 25px">
 				<td style="padding: 10px"> <?php echo $alimentos['tipoBem'];?> </td>
 				<td style="padding: 10px"> <?php echo $alimentos['nomeBem'];?> </td>
+				
+				<!-- alterar o a-->
+				<td><a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-plus" style="font-size:24px;color:black"></a></td>
 			</tr>
 				<?php } ?>
 		</table>
