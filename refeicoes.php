@@ -71,10 +71,12 @@ include_once("conexaoPesquisa.php");
 				<td style="padding: 25px">
 				
 					<?php
-						$result = $conn->query("SELECT nomeBem, nome FROM bem WHERE data=subdate(current_date, 1)");
-			
-						echo $result;
+						$pratodia = "SELECT nomeBem FROM bem WHERE data=subdate(current_date, 1)";
+						$pratodia = mysqli_query($conn, $pratodia) or die(mysqli_error($conn));
+						$row_pratodia = mysqli_fetch_assoc($pratodia);
 					?>
+					
+					<p><b>Nome</b> <?php echo $row_pratodia['nomeBem'];?> </p>
 				
 				</td>
 			</tr>
