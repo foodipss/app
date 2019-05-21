@@ -103,11 +103,11 @@ include_once("conexaoPesquisa.php");
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['F3',     50],
+          ['F2',      20],
+          ['F8',  20],
+          ['F4', 10],
+          ['F1',    7]
           //['<?php $codigo_fonte ?>', <?php $contador?>],        
 
       ]);
