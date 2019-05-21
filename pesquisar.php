@@ -48,7 +48,7 @@ include_once("conexaoPesquisa.php");
 			?>	
 			</datalist>
 			<br>
-			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" style="font-size:20px;color:#FFBF00" value="Pesquisar">
+			<br><input name="SendPesqUser" type="submit" class="btn btn-warning btn-lg" style="font-size:20px;" value="Pesquisar">
 		</form><br>
 
 		<table id="tabela" class="display" style="width:100%">
