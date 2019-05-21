@@ -17,7 +17,7 @@ h5 {
   font-size: 30px;
 }
 .button{
-  width: 40%;
+  width: 60%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -95,7 +95,7 @@ date_default_timezone_set('Europe/London');
 
 
 </table>
-     <br>
+     
 </div>
 
 
