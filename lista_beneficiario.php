@@ -79,7 +79,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 
   <td>
-  	<a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>">Editar Informações </a>
+  	<a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-edit" style="font-size:48px;color:black"></a>
   </td>
   	<td>
   	<a href="apagarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-trash-o" style="font-size:24px;color:black"> </a>
