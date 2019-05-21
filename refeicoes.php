@@ -46,14 +46,15 @@ include_once("conexaoPesquisa.php");
 						$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 						if($SendPesqUser){
 							$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-							$resultado_row_beneficiario = "SELECT * from beneficiario where codigo_beneficiario ='$codigo_beneficiario'";
+							$resultado_row_beneficiario = "SELECT r.data, b.nomeBem, n.restricoes from refeicao r, bem b, beneficiario n where codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
 							$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
 							$row_row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
 						}
 					?>
 					
-					<p><b>Benefiário</b> <?php echo $row_row_beneficiario['nome'];?> </p>
-					<p><b>Contacto</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+					<p><b>Restricoes</b> <?php echo $row_row_beneficiario['restricoes'];?> </p>
+					<p><b>Data</b> <?php echo $row_row_beneficiario['data'];?> </p>
+					<p><b>Bem</b> <?php echo $row_row_beneficiario['nomeBem'];?> </p>
 					
 				</td>
 				
@@ -64,21 +65,18 @@ include_once("conexaoPesquisa.php");
 		<br></br>
 		<?php 
 		
-		$consulta = "SELECT nomeBem FROM bem WHERE visivel='1'";
-		$con = $conn->query($consulta) or die($conn->error);
+		$pratododia = "SELECT tipoBem, nomeBem FROM bem WHERE visivel='1'";
+		$con = $conn->query($pratododia) or die($conn->error);
 		?>
 		
-		<table style="width:100%">
+		<table style="width:100%" class="table">
 			<tr style="padding: 25px">
 				<th style="padding: 25px">Pratos do dia</th>
 			</tr>
-				<?php while ($dado = $con->fetch_array()) { ?>
+				<?php while ($alimentos = $con->fetch_array()) { ?>
 			<tr style="padding: 25px">
-				<td style="padding: 25px">
-					
-					<?php echo $dado['nomeBem'];?>
-				
-				</td>
+				<td style="padding: 10px"> <?php echo $alimentos['tipoBem'];?> </td>
+				<td style="padding: 10px"> <?php echo $alimentos['nomeBem'];?> </td>
 			</tr>
 				<?php } ?>
 		</table>
