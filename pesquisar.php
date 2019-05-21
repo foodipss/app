@@ -166,7 +166,7 @@ button:hover {
 			<label>Levou: </label>
 			<input name="quantidadeLevou" value=""><br><br>
 
-			<button type="submit"  style="font-size:20px;>Registar</button>
+			<button type="submit"  data-toggle="modal" data-target="#myModal">Registar</button>
 		</form>			
 		<?php
 		}
