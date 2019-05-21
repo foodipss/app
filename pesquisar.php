@@ -11,7 +11,62 @@ include_once("conexaoPesquisa.php");
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+<header>
+<style>
 
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+
+input[type=text], select {
+	
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FF8000;
+}
+
+button{
+	
+	  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	
+}
+
+button:hover {
+  background-color: #FF8000;
+}
+</style>
+
+</header>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript">
