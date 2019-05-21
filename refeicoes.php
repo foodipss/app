@@ -65,10 +65,18 @@ include_once("conexaoPesquisa.php");
 		
 		<table style="width:100%">
 			<tr style="padding: 25px">
-				<th style="padding: 25px">Tupperware 1</th>
+				<th style="padding: 25px">Pratos do dia</th>
 			</tr>
 			<tr style="padding: 25px">
-				<td style="padding: 25px">linha 1 coluna 1</td>
+				<td style="padding: 25px">
+				
+					<?php
+						$result = $conn->query("SELECT nomeBem, nome FROM bem WHERE data=subdate(current_date, 1)");
+			
+						
+					?>
+				
+				</td>
 			</tr>
 		</table>
 	</body>
