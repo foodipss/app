@@ -72,7 +72,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
           <th>Telefone</th>
           <th>Número Elementos Agregado</th>
           <th>Restrições Alimentares</th>
-          <th colspan=2>Operações</th>
+          <th colspan=2></th>
         </tr>
       </thead>
   <tbody>
