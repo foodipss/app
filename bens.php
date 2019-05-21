@@ -16,7 +16,7 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-button[type=submit] {
+.button{
   width: 50%;
   background-color: #FFBF00;
   color: white;
@@ -27,7 +27,7 @@ button[type=submit] {
   cursor: pointer;
 }
 
-button[type=submit]:hover {
+.button:hover {
   background-color: #FF8000;
 }
 
