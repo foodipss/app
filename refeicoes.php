@@ -77,9 +77,13 @@ include_once("conexaoPesquisa.php");
 
 					<?php
 						echo $name;
+						
 					?>
-				
+					
 				</td>
+				<td style="padding: 25px"> <input type="submit" name="submit" class="btn-warning btn-lg" value="-"> </td>
+				<td style="padding: 25px"> <input type="submit" name="submit" class="btn-warning btn-lg" value="Confirmar"> </td>
+				
 			</tr>
 		</table>
 		
@@ -98,16 +102,13 @@ include_once("conexaoPesquisa.php");
 			<tr style="padding: 25px">
 				<td style="padding: 10px"> <?php echo $alimentos['tipoBem'];?> </td>
 				<td style="padding: 10px"> 
-				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-						<input name="name" value="<?php echo $alimentos['nomeBem']?>">
-						<input type="submit" name="submit" value="Submit">  
-					</form></td>
-				
-				<!-- alterar o a-->
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+						 
+				</td>
 				<td>
-				
-					
-					
+						<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
 				</td>
 				
 			</tr>
