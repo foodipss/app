@@ -19,7 +19,71 @@ session_start();
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-  <center> <h5><b><i class="fa fa-dashboard"></i> Registar Novo Beneficiario </b></h5></center>
+    <style>
+
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+
+input[type=text], select {
+	
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FF8000;
+}
+
+button{
+	
+	  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	
+}
+      
+button[type=button]{
+	
+	  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	
+}
+button:hover {
+  background-color: #FF8000;
+}
+</style>
+  <center> <h5><b Registar Novo Beneficiario </b></h5></center>
   </header>
 
   
