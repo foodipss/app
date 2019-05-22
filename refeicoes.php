@@ -58,7 +58,28 @@ include_once("conexaoPesquisa.php");
 					
 				</td>
 				
-				<td style="padding: 25px">LINHA 1 COLUNA 3</td>
+				<td style="padding: 25px">
+				
+					<?php
+						$name = "";
+
+						if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						$name = test_input($_POST["name"]);
+						}
+
+						function test_input($data) {
+							$data = trim($data);
+							$data = stripslashes($data);
+							$data = htmlspecialchars($data);
+							return $data;
+							}
+						?>
+
+					<?php
+						echo $name;
+					?>
+				
+				</td>
 			</tr>
 		</table>
 		
@@ -76,10 +97,19 @@ include_once("conexaoPesquisa.php");
 				<?php while ($alimentos = $con->fetch_array()) { ?>
 			<tr style="padding: 25px">
 				<td style="padding: 10px"> <?php echo $alimentos['tipoBem'];?> </td>
-				<td style="padding: 10px"> <?php echo $alimentos['nomeBem'];?> </td>
+				<td style="padding: 10px"> 
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input name="name" value="<?php echo $alimentos['nomeBem']?>">
+						<input type="submit" name="submit" value="Submit">  
+					</form></td>
 				
 				<!-- alterar o a-->
-				<td><a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-plus" style="font-size:24px;color:black"></a></td>
+				<td>
+				
+					
+					
+				</td>
+				
 			</tr>
 				<?php } ?>
 		</table>
