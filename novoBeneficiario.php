@@ -135,9 +135,19 @@ button:hover {
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label for="nr_elementos_agregado">Número Elementos Adultos</label>
+                                <label for="nr_elementos_agregado">Número de Adultos</label>
 				  <br>
                                 <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado">
+                            </div>
+                       </td>
+                     </tr>
+			
+			<tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="nr_elementos_criancas">Número de Crianças</label>
+				  <br>
+                                <input name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas">
                             </div>
                        </td>
                      </tr>
