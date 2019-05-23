@@ -67,6 +67,7 @@ button:hover {
                                 
                                 <label for='codigoVoluntario'>Código Voluntário</label>
                           <br>
+			  <br>
                                 <input type="text" name="codigoVoluntario" class="form-control" id="codigoVoluntario" placeholder="Código Voluntário">
                        </div>
                         </td>
@@ -77,6 +78,7 @@ button:hover {
                                 
                                 <label for='nome'>Nome</label>
                           <br>
+			  <br>
                                 <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                        </div>
                         </td>
@@ -88,6 +90,7 @@ button:hover {
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
                               <br>
+			      <br>
                                 <input name="telefone" maxlength="9" class="form-control" id="telefone" placeholder="Telefone">
                             </div>
                        </td>
