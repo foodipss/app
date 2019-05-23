@@ -23,6 +23,21 @@ h5 {
   font-size: 30px;
 }
 
+input[type=submit] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FF8000;
+}
+
       
 button[type=button]{
 	
