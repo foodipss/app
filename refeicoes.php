@@ -15,7 +15,7 @@ include_once("conexaoPesquisa.php");
 		<?php require_once "index.php"; ?>
 		
 		<div style="width: 100%;">
-			<div style="float: left; width: 25%;">
+			<div style="float: left; width: 30%;">
 				<table>
 					<tr style="padding: 25px">
 						<th style="padding: 25px">Beneficiário</th>
@@ -63,7 +63,7 @@ include_once("conexaoPesquisa.php");
 				</table>
 			</div>
 			
-			<div style="float: left; width: 50%;">
+			<div style="float: left; width: 40%;">
 				<table style="width:90%" class="table">
 					<tr style="padding: 25px">
 						<th style="padding: 25px">Histórico</th>
@@ -76,7 +76,7 @@ include_once("conexaoPesquisa.php");
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data5 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data5 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 5)";
 										$resultado_data5 = mysqli_query($conn, $resultado_data5) or die(mysqli_error($conn));
 										$row_data5 = mysqli_fetch_assoc($resultado_data5);
 									}
@@ -90,7 +90,7 @@ include_once("conexaoPesquisa.php");
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data4 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data4 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 4)";
 										$resultado_data4 = mysqli_query($conn, $resultado_data4) or die(mysqli_error($conn));
 										$row_data4 = mysqli_fetch_assoc($resultado_data4);
 									}
@@ -104,7 +104,7 @@ include_once("conexaoPesquisa.php");
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data3 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data3 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 3)";
 										$resultado_data3 = mysqli_query($conn, $resultado_data3) or die(mysqli_error($conn));
 										$row_data3 = mysqli_fetch_assoc($resultado_data3);
 									}
@@ -118,7 +118,7 @@ include_once("conexaoPesquisa.php");
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data2 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data2 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 2)";
 										$resultado_data2 = mysqli_query($conn, $resultado_data2) or die(mysqli_error($conn));
 										$row_data2 = mysqli_fetch_assoc($resultado_data2);
 									}
@@ -132,7 +132,7 @@ include_once("conexaoPesquisa.php");
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data1 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data1 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 1)";
 										$resultado_data1 = mysqli_query($conn, $resultado_data1) or die(mysqli_error($conn));
 										$row_data1 = mysqli_fetch_assoc($resultado_data1);
 									}
@@ -150,7 +150,7 @@ include_once("conexaoPesquisa.php");
 					</tr>
 				</table>
 			
-			<div style="float: left; width: 25%;">
+			<div style="float: left; width: 30%;">
 				<table>
 					<tr style="padding: 25px">
 						<th style="padding: 25px">Cesto</th>
@@ -182,39 +182,162 @@ include_once("conexaoPesquisa.php");
 					</tr>
 				</table>
 			</div>
-			<br style="clear: left;" />
 		</div>
 		
 		<br>
 		
 		<div style="width: 100%;">
 			<div style="float: left; width: 100%;">
-			
-				<?php 
-					$pratododia = "SELECT tipoBem, nomeBem FROM bem WHERE visivel='1'";
-					$con = $conn->query($pratododia) or die($conn->error);
-				?>
-				
-				<table style="width:100%" class="table">
-					<tr style="padding: 25px">
-						<th style="padding: 25px">Pratos do dia</th>
-					</tr>
-					
-					<?php while ($alimentos = $con->fetch_array()) { ?>
-					<tr style="padding: 25px">
-						<td style="padding: 10px"> <?php echo $alimentos['tipoBem'];?> </td>
-						<td style="padding: 10px"> 
-							<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-								<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
-						 
-						</td>
-						<td>
-							<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
-							</form>
-						</td>
-					</tr>
-					<?php } ?>
-				</table>
+	<table>
+		<tr style="padding: 25px">
+			<th style="padding: 25px">Pratos do dia</th>
+		</tr>
+	</table>
+		
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$sopa = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Sopas'";
+			$conexaosopa = $conn->query($sopa) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Sopa</th>
+			</tr>
+			<?php while ($alimentos = $conexaosopa->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$carne = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Carne'";
+			$conexaocarne = $conn->query($carne) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Carne</th>
+			</tr>
+			<?php while ($alimentos = $conexaocarne->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$peixe = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Peixe'";
+			$conexaopeixe = $conn->query($peixe) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Peixe</th>
+			</tr>
+			<?php while ($alimentos = $conexaopeixe->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$acompanhamento = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Acompanhamento'";
+			$conexaoacompanhamento = $conn->query($acompanhamento) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Acompanhamento</th>
+			</tr>
+			<?php while ($alimentos = $conexaoacompanhamento->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$composto = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Composto'";
+			$conexaocomposto = $conn->query($composto) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Composto</th>
+			</tr>
+			<?php while ($alimentos = $conexaocomposto->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+	
+	<div style="float: left; width: 16,66666666666667%;">
+		<?php 
+			$outro = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Outros'";
+			$conexaooutro = $conn->query($outro) or die($conn->error);
+		?>
+		<table>
+			<tr>
+				<th>Outro</th>
+			</tr>
+			<?php while ($alimentos = $conexaooutro->fetch_array()) { ?>
+			<tr>
+				<td> 
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+						<input style="padding: 10px" name="name" value="<?php echo $alimentos['nomeBem']?>">
+				</td>
+				<td>
+					<input type="submit" name="submit" class="btn-warning btn-lg" value="+"> 
+					</form>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+	</div>
+
 			</div>
 		</div>
 	</body>
