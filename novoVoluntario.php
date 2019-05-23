@@ -23,16 +23,6 @@ h5 {
   font-size: 30px;
 }
 
-input[type=text], select {
-	
-  width: 20%;
-  padding: 12px 20px;
-  margin: 8px 0px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
 input[type=submit] {
   width: 20%;
   background-color: #FFBF00;
@@ -78,7 +68,7 @@ button:hover {
                                 <label for='codigoVoluntario'>Código Voluntário</label>
                           <br>
 			  <br>
-                                <input type="text" name="codigoVoluntario" class="form-control" id="codigoVoluntario" placeholder="Código Voluntário">
+                                <input type="text" name="codigoVoluntario" class="form-control" id="codigoVoluntario">
                        </div>
                         </td>
 
@@ -89,7 +79,7 @@ button:hover {
                                 <label for='nome'>Nome</label>
                           <br>
 			  <br>
-                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
+                                <input type="text" name="nome" class="form-control" id="nome">
                        </div>
                         </td>
 
@@ -101,7 +91,7 @@ button:hover {
                                 <label for="telefone">Telefone</label>
                               <br>
 			      <br>
-                                <input name="telefone" maxlength="9" class="form-control" id="telefone" placeholder="Telefone">
+                                <input name="telefone" maxlength="9" class="form-control" id="telefone">
                             </div>
                        </td>
 
