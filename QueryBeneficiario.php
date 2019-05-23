@@ -10,9 +10,10 @@ $nome = $_POST['nome'];
 $morada = $_POST['morada']; 
 $telefone = $_POST['telefone'];
 $nr_elementos_agregado = $_POST['nr_elementos_agregado'];
+$nr_elementos_criancas = $_POST['nr_elementos_criancas'];
 $restricoes = $_POST['restricoes'];
 
-$query = "INSERT INTO beneficiario ( codigo_beneficiario, nome, morada, telefone, nr_elementos_agregado, restricoes ) VALUES ( '$codigo_beneficiario', '$nome', '$morada', '$telefone', '$nr_elementos_agregado', '$restricoes')";
+$query = "INSERT INTO beneficiario ( codigo_beneficiario, nome, morada, telefone, nr_elementos_agregado, nr_elementos_criancas, restricoes ) VALUES ( '$codigo_beneficiario', '$nome', '$morada', '$telefone', '$nr_elementos_agregado', '$restricoes')";
 $queryq = mysqli_query($con, $query);
 
 echo "<script> alert('Parabéns ! O seu registo foi aceite.');top.location.href='lista_beneficiario.php';</script>";
