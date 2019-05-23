@@ -15,7 +15,7 @@ include_once("conexaoPesquisa.php");
 		<?php require_once "index.php"; ?>
 		
 		<div style="width: 100%;">
-			<div style="float: left; width: 50%;">
+			<div style="float: left; width: 25%;">
 				<table>
 					<tr style="padding: 25px">
 						<th style="padding: 25px">Beneficiário</th>
@@ -41,35 +41,114 @@ include_once("conexaoPesquisa.php");
 							</form>
 						</td>
 					</tr>
-				</table>
-			</div>
-			
-			<div style="float: left; width: 25%;">
-				<table>
-					<tr style="padding: 25px">
-						<th style="padding: 25px">Histórico</th>
+						<?php
+							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+							if($SendPesqUser){
+								$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+								$resultado_row_beneficiario = "SELECT codigo_beneficiario, restricoes FROM beneficiario WHERE codigo_beneficiario ='$codigo_beneficiario' ";
+								$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
+								$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
+							}
+						?>
+					<tr>
+						<td>
+							Código <?php echo $row_beneficiario['codigo_beneficiario'];?>
+						</td>
 					</tr>
-					
-					<tr style="padding: 25px">
-						<td style="padding: 25px">
-							<?php
-								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
-									if($SendPesqUser){
-										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_row_beneficiario = "SELECT r.data, b.nomeBem, n.restricoes from refeicao r, bem b, beneficiario n where codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
-										$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
-										$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
-									}
-							?>
-					
-							<p><b>Restricoes</b> <?php echo $row_beneficiario['restricoes'];?> </p>
-							<p><b>Data</b> <?php echo $row_beneficiario['data'];?> </p>
-							<p><b>Bem</b> <?php echo $row_beneficiario['nomeBem'];?> </p>
-					
+					<tr>
+						<td>
+							Restrições <?php echo $row_beneficiario['restricoes'];?>
 						</td>
 					</tr>
 				</table>
 			</div>
+			
+			<div style="float: left; width: 50%;">
+				<table style="width:90%" class="table">
+					<tr style="padding: 25px">
+						<th style="padding: 25px">Histórico</th>
+					</tr>
+  
+					<tr style="padding: 25px">
+						<td>
+						
+							<?php
+								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+									if($SendPesqUser){
+										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+										$resultado_data5 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data5 = mysqli_query($conn, $resultado_data5) or die(mysqli_error($conn));
+										$row_data5 = mysqli_fetch_assoc($resultado_data5);
+									}
+							?>
+							<?php echo $row_data5['data'];?>
+						</td>
+						
+						<td>
+						
+							<?php
+								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+									if($SendPesqUser){
+										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+										$resultado_data4 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data4 = mysqli_query($conn, $resultado_data4) or die(mysqli_error($conn));
+										$row_data4 = mysqli_fetch_assoc($resultado_data4);
+									}
+							?>
+							<?php echo $row_data4['data'];?>
+						</td>
+						
+						<td>
+						
+							<?php
+								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+									if($SendPesqUser){
+										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+										$resultado_data3 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data3 = mysqli_query($conn, $resultado_data3) or die(mysqli_error($conn));
+										$row_data3 = mysqli_fetch_assoc($resultado_data3);
+									}
+							?>
+							<?php echo $row_data3['data'];?>
+						</td>
+						
+						<td>
+						
+							<?php
+								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+									if($SendPesqUser){
+										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+										$resultado_data2 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data2 = mysqli_query($conn, $resultado_data2) or die(mysqli_error($conn));
+										$row_data2 = mysqli_fetch_assoc($resultado_data2);
+									}
+							?>
+							<?php echo $row_data2['data'];?>
+						</td>
+						
+						<td>
+						
+							<?php
+								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+									if($SendPesqUser){
+										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+										$resultado_data1 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem";
+										$resultado_data1 = mysqli_query($conn, $resultado_data1) or die(mysqli_error($conn));
+										$row_data1 = mysqli_fetch_assoc($resultado_data1);
+									}
+							?>
+							<?php echo $row_data1['data'];?>
+						</td>
+					</tr>
+  
+					<tr style="padding: 25px">
+						<td><?php echo $row_data5['nomeBem'];?></td>
+						<td><?php echo $row_data4['nomeBem'];?></td>
+						<td><?php echo $row_data3['nomeBem'];?></td>
+						<td><?php echo $row_data2['nomeBem'];?></td>
+						<td><?php echo $row_data1['nomeBem'];?></td>
+					</tr>
+				</table>
 			
 			<div style="float: left; width: 25%;">
 				<table>
