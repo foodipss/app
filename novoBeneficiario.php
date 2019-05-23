@@ -158,7 +158,7 @@ button:hover {
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
 				    <br>
-                                <input name="restricoes" class="form-control" id="restricoes" placeholder="Restricoes Alimentares">
+                                <input name="restricoes" class="form-control" id="restricoes">
                             </div>
                        </td>
                      </tr>
