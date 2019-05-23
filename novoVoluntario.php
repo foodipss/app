@@ -23,6 +23,16 @@ h5 {
   font-size: 30px;
 }
 
+input[type=text], select {
+	
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input[type=submit] {
   width: 20%;
   background-color: #FFBF00;
