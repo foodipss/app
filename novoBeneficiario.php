@@ -93,7 +93,8 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='codigo_beneficiario'>Código Beneficiário</label>
-                                <input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario" placeholder= "Código Beneficiário">
+				<br>
+                                <input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
                        </div>
                         </td>
 
@@ -102,7 +103,8 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Nome</label>
-                                <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
+				<br>
+                                <input type="text" name="nome" class="form-control" id="nome">
                        </div>
                         </td>
 
@@ -112,7 +114,8 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Morada</label>
-                                <input type="text" name="morada" class="form-control" id="morada" placeholder="Morada">
+				<br>
+                                <input type="text" name="morada" class="form-control" id="morada">
                        </div>
                         </td>
 
@@ -122,7 +125,8 @@ button:hover {
                         <td>
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
-                                <input name="telefone" maxlength="9" class="form-control" id="telefone" placeholder="Telefone">
+				    <br>
+                                <input name="telefone" maxlength="9" class="form-control" id="telefone">
                             </div>
                        </td>
 
@@ -131,8 +135,9 @@ button:hover {
                     <tr>
                         <td>
                             <div class="form-group">
-                                <label for="nr_elementos_agregado">Número Elementos Agregado</label>
-                                <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" placeholder="Nr Elementos Agregado">
+                                <label for="nr_elementos_agregado">Número Elementos Adultos</label>
+				  <br>
+                                <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado">
                             </div>
                        </td>
                      </tr>
@@ -142,6 +147,7 @@ button:hover {
                         <td>
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
+				    <br>
                                 <input name="restricoes" class="form-control" id="restricoes" placeholder="Restricoes Alimentares">
                             </div>
                        </td>
