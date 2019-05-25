@@ -51,7 +51,7 @@ button[type=button]{
   cursor: pointer;
 	
 }
-button:hover {
+button[type=button]:hover {
   background-color: #FF8000;
 }
 </style>
