@@ -44,7 +44,7 @@ $itens_por_pagina = 5;
 
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
 
-$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, nr_elementos_criancas, codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT $inicio, $itens_por_pagina"; 
+$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, nr_elementos_criancas,codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT $inicio, $itens_por_pagina"; 
 
 $resultado=$mysqli->query($query)or die($mysqli->error);
 
@@ -71,7 +71,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
           <th>Morada</th>
           <th>Telefone</th>
           <th>Número de Adultos</th>
-          <th>Número de Crianças</th>
+		  <th>Número de Criancas</th>
           <th>Restrições Alimentares</th>
           <th colspan=2></th>
         </tr>
@@ -85,7 +85,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
         <td><?php echo $row['morada'];?></td>
   			<td><?php echo $row['telefone'];?></td>
         <td><?php echo $row['nr_elementos_agregado'];?></td>
-        <td><?php echo $row['nr_elementos_criancas'];?></td>
+		<td><?php echo $row['nr_elementos_criancas'];?></td>
         <td><?php echo $row['restricoes'];?></td>
 
 
