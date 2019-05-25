@@ -30,7 +30,7 @@ h5 {
 
 input[type=text], select {
 	
-  width: 50%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -83,7 +83,7 @@ button:hover {
   background-color: #FF8000;
 }
 </style>
-  <center> <h5><b Registar Novo Beneficiario </b></h5></center>
+  <center> <h5><b> Registar Novo Beneficiario </b></h5></center>
   </header>
 
   
@@ -93,7 +93,7 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='codigo_beneficiario'>Código Beneficiário</label>
-				<br>
+								<br>
                                 <input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
                        </div>
                         </td>
@@ -103,8 +103,8 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Nome</label>
-				<br>
-                                <input type="text" name="nome" class="form-control" id="nome">
+								<br>
+                                <input type="text" name="nome" class="form-control" id="nome" >
                        </div>
                         </td>
 
@@ -114,8 +114,8 @@ button:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Morada</label>
-				<br>
-                                <input type="text" name="morada" class="form-control" id="morada">
+								<br>
+                                <input type="text" name="morada" class="form-control" id="morada" >
                        </div>
                         </td>
 
@@ -125,8 +125,7 @@ button:hover {
                         <td>
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
-				    <br>
-                                <input name="telefone" maxlength="9" class="form-control" id="telefone">
+                                <input name="telefone" maxlength="9" class="form-control" id="telefone" >
                             </div>
                        </td>
 
@@ -136,29 +135,25 @@ button:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_agregado">Número de Adultos</label>
-				  <br>
-                                <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado">
-                            </div>
-                       </td>
-                     </tr>
-			
-			<tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="nr_elementos_criancas">Número de Crianças</label>
-				  <br>
-                                <input name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas">
+                                <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
                             </div>
                        </td>
                      </tr>
 
+					 <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="nr_elementos_criancas">Número de Criancas</label>
+                                <input name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
+                            </div>
+                       </td>
+                     </tr>
 
                       <tr>
                         <td>
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
-				    <br>
-                                <input name="restricoes" class="form-control" id="restricoes">
+                                <input name="restricoes" class="form-control" id="restricoes" >
                             </div>
                        </td>
                      </tr>
