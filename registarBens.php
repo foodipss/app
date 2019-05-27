@@ -33,7 +33,7 @@ h5 {
 
 input[type=text], select {
 	
-  width: 40%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -43,7 +43,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-  width: 40%;
+  width: 20%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -98,10 +98,11 @@ input[type=submit]:hover {
 	<br>
 
   <input type="hidden" name="data" value="<?php echo date('d-m-Y H:i:s'); ?>" readonly="readonly">
-  <input type="submit" value="Voltar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
+	<input type="submit" value="Registar Entrega de Bens">
+  <input type="submit" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> </input>
   
 
-            <input type="submit" value="Registar Entrega de Bens">
+            
 
 </form>       
 
