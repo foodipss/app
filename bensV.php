@@ -4,7 +4,7 @@
 <html>
 <title>REFOOD</title>
 
-<?php require_once "index.php"; ?>
+<?php require_once "indexVoluntario.php"; ?>
 
 <header class="w3-container" style="padding-top:40px">
    
