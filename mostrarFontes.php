@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -8,15 +7,26 @@
 
 
 <header class="w3-container" style="padding-top:40px">
-     <style>
-
+    
+<style>
 h5 {
   color: black;
   text-align: center;
   font-family: ariana;
   font-size: 30px;
 }
+button {
+    width: 20%;
+    background-color: #FFBF00;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
    </style>
+
+
    <center> <h5><b> Lista de Fontes </b></h5></center>
     <p>
   </header>
@@ -27,22 +37,15 @@ $conn = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0
   if ($conn->connect_error) {
    die("Connection failed: " . $conn->connect_error);
   } 
-
 // pegar a pagina atual
 $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
-
 $itens_por_pagina = 7;
-
-
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
-
-
 $sql = "SELECT * FROM fonte WHERE visivel='1' ORDER BY codigo_fonte  LIMIT $inicio, $itens_por_pagina";
   
 $result = $conn->query($sql) or die($conn->error);;
   
 $num_total = mysqli_num_rows($result);
-
 //defifnir o numero de paginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
 ?>
@@ -50,7 +53,6 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 <body>
   <div class="colFonte">
-         <a href="registarFontes.php">Registar Nova fonte</a>
   <br>
   <p></p>
   <table class="table">
@@ -96,10 +98,8 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 </table>
 
 <?php
-
 $pagina_anterior = $pagina - 1;
 $pagina_seguinte = $pagina + 1;
-
 ?>
 
 <nav class="text-center">
@@ -144,5 +144,9 @@ $pagina_seguinte = $pagina + 1;
   </ul>
 </nav>
 </div>
+
+<form method="get" action="registarFontes.php" >
+    <button type="submit">Registar Nova Fonte</button>
+</form>
 </body>
 </html>
