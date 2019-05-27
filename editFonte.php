@@ -60,7 +60,7 @@ button[type=button]:hover {
 }
 	      
 </style>
-
+<center> <h5><b>Editar Fonte</b></h5></center>
 
 <form action="editFonte2.php" method="post" id="editFonte2">
 
