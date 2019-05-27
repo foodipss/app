@@ -76,24 +76,7 @@ include_once("conexaoPesquisa.php");
   }
   </script>
 
-    <?php 
-     
-      $lista = array();
-      $cor= array(); 
-      
-      $cor[0] = '#76A7FA';
-      $cor[1] = '#silver';
-      $cor[2] = '#gold';
-      $cor[3] = '#e5e4e2';
-      $cor[4] = '#e5e4e2';
-      
-      $resultado = mysqli_query ($conn,"SELECT count(b.idFonte), b.idFonte, f.codigo_fonte FROM bem b, fonte f where f.idFonte = b.idFonte GROUP BY f.codigo_fonte");
-           $row = mysqli_fetch_array($resultado);
-      while (count($row) == 0) {
-          $contador = $row[count("idFonte")];
-        }
-
-    ?>
+    
 
   <div id="columnchart_values" style="width: 50%; float: right; padding: 5px;"></div>
 
@@ -112,7 +95,9 @@ include_once("conexaoPesquisa.php");
 
       ]);
         var options = {
-          title: 'Fontes',
+          title: 'Fontes que doaram o maior número de bens',
+           width: 600,
+           height: 400,
           pieHole: 0.4,
         };
 
