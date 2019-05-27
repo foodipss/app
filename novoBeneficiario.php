@@ -56,9 +56,7 @@ input[type=submit]:hover {
   background-color: #FF8000;
 }
 
-button[type=button]:hover {
-  background-color: #FF8000;
-}
+
 	      input[type=submit] {
   width: 20%;
   background-color: #FFBF00;
@@ -111,6 +109,7 @@ button[type=button]:hover {
                                 
                                 <label for='nome'>Nome</label>
 								<br>
+				<br>
                                 <input type="text" name="nome" class="form-control" id="nome" >
                        </div>
                         </td>
@@ -122,6 +121,7 @@ button[type=button]:hover {
                                 
                                 <label for='nome'>Morada</label>
 								<br>
+				<br>
                                 <input type="text" name="morada" class="form-control" id="morada" >
                        </div>
                         </td>
@@ -132,6 +132,8 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
+				    <br>
+				    <br>
                                 <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone" >
                             </div>
                        </td>
@@ -142,6 +144,8 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_agregado">Número de Adultos</label>
+				    <br>
+				    <br>
                                 <input type="text" name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
                             </div>
                        </td>
@@ -160,6 +164,8 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
+				    <br>
+				    <br>
                                 <input type="text" name="restricoes" class="form-control" id="restricoes" >
                             </div>
                        </td>
