@@ -28,7 +28,6 @@ button {
 
 
    <center> <h5><b> Lista de Fontes </b></h5></center>
-    <p>
   </header>
 
 <?php
