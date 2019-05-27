@@ -74,62 +74,28 @@ input[type=text] {
 
   
             <form action="QueryVoluntario.php" method="post" id="func">
-                <table id="tableFunc">
-                  
-                    <tr>
-                        <td>    <div class="form-group">
-                                
-                                <label for='nome'>Nome</label>
-                          <br>
-			  <br>
-                                <input type="text" name="nome" class="form-control" id="nome">
-                       </div>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-                              <br>
-			      <br>
-                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone">
-                            </div>
-                       </td>
-                       </tr>
-                       <tr>
-
-            <td>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                              <br>
+                Nome:
+		    <br>
+                                <input type="text" name="nome"  id="nome">
+                       <br/>
+		Telefone:
+		    <br>
+                                <input type="text" name="telefone" maxlength="9"  id="telefone">
+                  <br/>
+		 Email:
+		   
             <br>
-                                <input type="text" name="email" class="form-control" id="email">
-                            </div>
-                       </td>
-                     </tr>
-                     <tr>
-                       <td>
-                            <div class="form-group">
-                                <label for="morada">Morada</label>
-                              <br>
+                                <input type="text" name="email"  id="email">
+                        <br/>
+		    Morada:
             <br>
-                                <input type="text" name="morada" class="form-control" id="morada">
-                            </div>
-                       </td>
-
-
-                    </tr>
-                    
-                  
-                </table>
-                <p></p>
+                                <input type="text" name="morada"  id="morada">
+                    <br/>
+		    
                 <input type='hidden' name='query' value="NovoVoluntario">
                 <input type="submit" value="Registar Voluntario" id="validar" class="btn btn-primary">
                 <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary">Cancelar</button>
             </form>
-        </div>
-    </div>
+       
 </body>
 </html>
