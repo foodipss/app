@@ -38,7 +38,7 @@ require('conexao_perfil.php');
 // pegar a pagina atual
 $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
 
-$itens_por_pagina = 5;
+$itens_por_pagina = 10;
 
 
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
