@@ -15,7 +15,7 @@
 			<li><a href="pesquisarV.php"><span class="fa fa-bars"></span>    Entrega de refeições</a></li>
 			<li><a href="mostrarFontesV.php"><span class="fa fa-home"></span>    Fontes</a></li>
 			<li><a href="lista_beneficiario_simples.php"><span class="fa fa-address-card"></span>    Beneficiários</a></li>
-			<li><a href="ajuda.php"><span class="fa fa-cog"></span>    Ajuda</a></li>
+			<li><a href="ajudaV.php"><span class="fa fa-cog"></span>    Ajuda</a></li>
 			<li><a href="logout.php"><span class="fa fa-circle-o-notch"></span>    Logout</a></li>
 			
 			
