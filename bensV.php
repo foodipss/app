@@ -85,7 +85,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
       <?php echo $row['porcao'];?>
       </td>
   <td>
-  <a href="apagarBem.php?idBem=<?php echo $row['idBem'];?>" class="fa fa-trash-o" style="font-size:24px;color:red"></a>
+  <a href="apagarBemV.php?idBem=<?php echo $row['idBem'];?>" class="fa fa-trash-o" style="font-size:24px;color:red"></a>
 </td>
 </tr>
 <?php } ?>
@@ -108,7 +108,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       if ($pagina_anterior != 0){ ?>
 
-      <a href="bens.php?pagina=<?php echo $pagina_anterior; ?>" >
+      <a href="bensV.php?pagina=<?php echo $pagina_anterior; ?>" >
        <span class="glyphicon glyphicon-chevron-left" style="color:#000000"></span>
       </a>
 
@@ -121,7 +121,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       //Apresentar a paginação
       for($i = 1; $i < $num_paginas; $i++) { ?>
-      <li><a href="bens.php?pagina=<?php echo $i; ?>"><?php echo $i ; ?></a></li>
+      <li><a href="bensV.php?pagina=<?php echo $i; ?>"><?php echo $i ; ?></a></li>
       <?php } ?>
 
       <li class="next">  
@@ -129,7 +129,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       if ($pagina_seguinte <= $num_total){ ?>
 
-      <a href="bens.php?pagina=<?php echo $pagina_seguinte ; ?>">
+      <a href="bensV.php?pagina=<?php echo $pagina_seguinte ; ?>">
         <span class="glyphicon glyphicon-chevron-right" style="color:#000000"></span>
       </a>
 
@@ -149,7 +149,7 @@ $pagina_seguinte = $pagina + 1;
 </div>
 <br>
 
-<form method="get" action="registarBens.php" >
+<form method="get" action="registarBensV.php" >
     <button type="submit">Registar Entrega de Bens</button>
 </form>
 
