@@ -67,7 +67,6 @@ button[type=button]:hover {
   <br>      
   <input type="text" name="nomefonte" required>
                   <br/><br>	
-<br>
   Código Fonte:
   <br>
   <input type="text" name="codigo_fonte" value = F required>
@@ -88,15 +87,15 @@ button[type=button]:hover {
 	<br>
 	<br>
   Morada da Fonte: 
-  <br>      
+     
   <input type ="text" name="moradafonte" required>
                   <br/><br>
   Email da Fonte: 
-  <br>
+  
   <input type="text" name="emailfonte" required>
                   <br/><br>
   Telefone da Fonte:
-  <br>      
+        
   <input type="text" name="contactofonte" required>
                   <br/><br>
         
