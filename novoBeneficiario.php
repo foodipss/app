@@ -23,9 +23,9 @@ h5 {
   font-size: 30px;
 }
 	    
-input[type=text] {
+input[type=text], select {
 	
-  width: 60%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -35,7 +35,6 @@ input[type=text] {
 }
 	    
 	    
-
 input[type=submit] {
   width: 20%;
   background-color: #FFBF00;
