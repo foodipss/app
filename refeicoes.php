@@ -16,7 +16,9 @@ include_once("conexaoPesquisa.php");
     </head>
 
     <body>
-        <?php require_once "index.php"; ?>
+        <?php
+			require_once "index.php";
+		?>
 
             <div style="width: 100%;">
                 <div style="float: left; width: 30%;">
@@ -76,22 +78,29 @@ include_once("conexaoPesquisa.php");
                         </tr>
 
                         <tr>
-                            <td>
-
-                                <?php
-								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
-									if($SendPesqUser){
-										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-										$resultado_data5 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 5)";
-										$resultado_data5 = mysqli_query($conn, $resultado_data5) or die(mysqli_error($conn));
-										$row_data5 = mysqli_fetch_assoc($resultado_data5);
-									}
+							<?php
+								$dia= date("d");
+								$mes= date("m");
 							?>
-                                    <?php echo $row_data5['data'];?>
+                            <td>
+								<?php
+									echo date('d-m', mktime(0,0,0,$mes,($dia-5)));	
+								?>
+								<?php
+									$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
+										if($SendPesqUser){
+											$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
+											$resultado_data5 = "SELECT r.data, b.nomeBem FROM refeicao r, bem b, beneficiario n WHERE codigo_beneficiario ='$codigo_beneficiario' AND r.idBenef = n.idBeneficiario AND r.idBem = b.idBem AND r.data=subdate(current_date, 5)";
+											$resultado_data5 = mysqli_query($conn, $resultado_data5) or die(mysqli_error($conn));
+											$row_data5 = mysqli_fetch_assoc($resultado_data5);
+										}
+								?>
                             </td>
 
                             <td>
-
+								<?php
+									echo date('d-m', mktime(0,0,0,$mes,($dia-4)));	
+								?>
                                 <?php
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
@@ -100,12 +109,13 @@ include_once("conexaoPesquisa.php");
 										$resultado_data4 = mysqli_query($conn, $resultado_data4) or die(mysqli_error($conn));
 										$row_data4 = mysqli_fetch_assoc($resultado_data4);
 									}
-							?>
-                                    <?php echo $row_data4['data'];?>
+								?>
                             </td>
 
                             <td>
-
+								<?php
+									echo date('d-m', mktime(0,0,0,$mes,($dia-3)));	
+								?>
                                 <?php
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
@@ -114,12 +124,13 @@ include_once("conexaoPesquisa.php");
 										$resultado_data3 = mysqli_query($conn, $resultado_data3) or die(mysqli_error($conn));
 										$row_data3 = mysqli_fetch_assoc($resultado_data3);
 									}
-							?>
-                                    <?php echo $row_data3['data'];?>
+								?>
                             </td>
 
                             <td>
-
+								<?php
+									echo date('d-m', mktime(0,0,0,$mes,($dia-2)));	
+								?>
                                 <?php
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
@@ -128,12 +139,13 @@ include_once("conexaoPesquisa.php");
 										$resultado_data2 = mysqli_query($conn, $resultado_data2) or die(mysqli_error($conn));
 										$row_data2 = mysqli_fetch_assoc($resultado_data2);
 									}
-							?>
-                                    <?php echo $row_data2['data'];?>
+								?>
                             </td>
 
                             <td>
-
+								<?php
+									echo date('d-m', mktime(0,0,0,$mes,($dia-1)));	
+								?>
                                 <?php
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
@@ -142,8 +154,7 @@ include_once("conexaoPesquisa.php");
 										$resultado_data1 = mysqli_query($conn, $resultado_data1) or die(mysqli_error($conn));
 										$row_data1 = mysqli_fetch_assoc($resultado_data1);
 									}
-							?>
-                                    <?php echo $row_data1['data'];?>
+								?>
                             </td>
                         </tr>
 
@@ -330,26 +341,26 @@ include_once("conexaoPesquisa.php");
 
                 <div style="float: left; width: 16%;">
                     <?php 
-			$outro = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Outros'";
-			$conexaooutro = $conn->query($outro) or die($conn->error);
-		?>
-                        <table>
+						$outro = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Outros'";
+						$conexaooutro = $conn->query($outro) or die($conn->error);
+					?>
+                    <table>
+                        <tr>
+                            <th>Outro</th>
+                        </tr>
+                        <?php while ($alimentos = $conexaooutro->fetch_array()) { ?>
                             <tr>
-                                <th>Outro</th>
+                                <td>
+                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
+										<input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
+                                </td>
+                                <td>
+                                    <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
+                                    </form>
+                                </td>
                             </tr>
-                            <?php while ($alimentos = $conexaooutro->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
+                        <?php } ?>
+                    </table>
                 </div>
             </div>
     </body>
