@@ -24,7 +24,7 @@ h5 {
 }
 
 input[type=submit] {
-  width: 20%;
+  width: 100%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -41,7 +41,7 @@ input[type=submit]:hover {
       
 button[type=button]{
 	
-	  width: 20%;
+	  width: 100%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
