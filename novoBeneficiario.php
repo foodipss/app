@@ -18,7 +18,7 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
+ <header class="w3-container" style="padding-top:40px">
     <style>
 
 h5 {
@@ -27,8 +27,8 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-
-input[type=text], select {
+	    
+input[type=text] {
 	
   width: 40%;
   padding: 12px 20px;
