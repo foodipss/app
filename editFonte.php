@@ -14,48 +14,81 @@
 
 ?>
 
+ <style>
+h5 {
+  color: black;
+  text-align: center;
+  font-family: ariana;
+  font-size: 30px;
+}
+input[type=text], select {
+	
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #FF8000;
+}
+	      
+button[type=button] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type=button]:hover {
+  background-color: #FF8000;
+}
+	      
+</style>
 
 
 <form action="editFonte2.php" method="post" id="editFonte2">
-<table id="tabelaeditFonte">
-                  
-<table border="0" width="100%">
-  <tr>
+
     <input type="hidden" name="idfonte" value="<?php echo $idfonte; ?>">
     
-    <td ><b>Nome da Fonte</b></td> 
-    <td ><input type="text" name="nomefonte" size="25" value="<?php echo $row['nomefonte']; ?>"/></td>
-  </tr>
+    Nome da Fonte:
+  <br>
+    <input type="text" name="nomefonte"  value="<?php echo $row['nomefonte']; ?>"/>
+  <br/>
   
-  <tr>
-    <td width="20"><b>Morada</b></td>
-    <td width="30"><input type="text" name="moradafonte" value="<?php echo $row['moradafonte']; ?>"/>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="20"><b>Email</b></td>
-    <td width="30"><input type="text" name="emailfonte" size="25" value="<?php echo $row['emailfonte']; ?>"/>
-    </td>
-  </tr>
-
-   <tr>
-    <td width="20"><b>Telefone</b></td>
-    <td width="30"><input type="text" name="contactofonte" maxlength="9" size="25" value="<?php echo $row['contactofonte']; ?>"/>
-    </td>
-  </tr>
-
-                </table>
-                <p></p>
+  Morada:
+  <br>
+    <input type="text" name="moradafonte" value="<?php echo $row['moradafonte']; ?>"/>
+    <br/>
+  Email:
+  <br>
+    <input type="text" name="emailfonte"  value="<?php echo $row['emailfonte']; ?>"/>
+  <br/>
+      
+  Contacto:
+<br>
+    <input type="text" name="contactofonte" maxlength="9"  value="<?php echo $row['contactofonte']; ?>"/>
+   <br/>
                 <input type='hidden' name='query' value="NovoVoluntario">
                 <input type="submit" value="Concluir alterações" id="validar" class="btn btn-primary">
                 <button type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
             </form>
-        </div>
-    </div>
-
-
-
+  
   
 </script>
 </body>
