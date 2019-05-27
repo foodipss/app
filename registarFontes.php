@@ -3,7 +3,7 @@
 <title>REFOOD</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<body>
+
 <?php require_once "index.php"; ?>
 
 <!-- Header -->
@@ -49,7 +49,7 @@ input[type=submit]:hover {
    <center> <h5>Registar Fonte</b></h5></center>
     <p>
   </header>
-
+<body>
 <form action="queryRegistarFonte.php" method="post">
   Nome da Fonte: 
   <br>      
