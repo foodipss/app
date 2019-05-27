@@ -41,7 +41,21 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=button]:hover {
+  background-color: #FF8000;
+}
+	      input[type=submit] {
+  width: 20%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=button]:hover {
   background-color: #FF8000;
 }
 	  </style>
@@ -89,7 +103,7 @@ input[type=submit]:hover {
                   <br/><br>
         
                   <input type="submit" value="Registar Fonte">
-		  <input type="submit" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> </input>
+		  <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
 </form>       
 
 
