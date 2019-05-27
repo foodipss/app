@@ -13,7 +13,7 @@
 			<li><a href="bens.php"><span class="fa fa-coffee"></span>   	Entrega de bens</a></li>
 			<li><a href="refeicoes.php"><span class="fa fa-cutlery"></span>    Preparação de refeições</a></li>
 			<li><a href="pesquisarV.php"><span class="fa fa-bars"></span>    Entrega de refeições</a></li>
-			<li><a href="mostrarFontesVoluntario.php"><span class="fa fa-home"></span>    Fontes</a></li>
+			<li><a href="mostrarFontes.php"><span class="fa fa-home"></span>    Fontes</a></li>
 			<li><a href="lista_beneficiario_simples.php"><span class="fa fa-address-card"></span>    Beneficiários</a></li>
 			<li><a href="ajuda.php"><span class="fa fa-cog"></span>    Ajuda</a></li>
 			<li><a href="logout.php"><span class="fa fa-circle-o-notch"></span>    Logout</a></li>
