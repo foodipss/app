@@ -28,7 +28,7 @@ session_start();
   
   $idVoluntario=$_GET['idVoluntario'];
   
-  $query="SELECT idVoluntario, nome, codigoVoluntario, telefone FROM voluntario WHERE idVoluntario='$idVoluntario'";
+  $query="SELECT * FROM voluntario WHERE idVoluntario='$idVoluntario'";
   
   $resultado=$mysqli->query($query);
   
@@ -45,19 +45,27 @@ session_start();
   <tr>
     <input type="hidden" name="idVoluntario" value="<?php echo $idVoluntario; ?>">
     
-    <td ><b>Código Voluntário</b></td> 
-    <td ><input type="text" name="codigoVoluntario" size="25" value="<?php echo $row['codigoVoluntario']; ?>"/></td>
   </tr>
   
   <tr>
-    <td width="20"><b>Nome</b></td>
+    <td width="20"><b>Nome:</b></td>
     <td width="30"><input type="text" name="nome" size="25" value="<?php echo $row['nome']; ?>"/>
     </td>
   </tr>
 
   <tr>
-    <td width="20"><b>Telefone</b></td>
+    <td width="20"><b>Telefone:</b></td>
     <td width="30"><input type="text" name="telefone" maxlength="9" size="25" value="<?php echo $row['telefone']; ?>"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="20"><b>Email:</b></td>
+    <td width="30"><input type="text" name="email" value="<?php echo $row['email']; ?>"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="20"><b>Morada:</b></td>
+    <td width="30"><input type="text" name="morada" value="<?php echo $row['morada']; ?>"/>
     </td>
   </tr>
 

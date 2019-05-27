@@ -22,17 +22,6 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-	    
- input {
-	
-  width: 40%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
 input[type=submit] {
   width: 20%;
@@ -50,7 +39,7 @@ input[type=submit]:hover {
 }
 
 	    
-button[type=button] {
+input[type=text] {
   width: 20%;
   background-color: #FFBF00;
   color: white;
@@ -60,7 +49,8 @@ button[type=button] {
   border-radius: 4px;
   cursor: pointer;
 }
-button[type=button]:hover {
+
+input[type=text]:hover {
   background-color: #FF8000;
 }
 
@@ -78,8 +68,8 @@ button[type=button]:hover {
                                 
                                 <label for='nome'>Nome</label>
                           <br>
-			  
-                                <input name="nome" class="form-control" id="nome">
+			  <br>
+                                <input type="text" name="nome" class="form-control" id="nome">
                        </div>
                         </td>
 
@@ -90,10 +80,32 @@ button[type=button]:hover {
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
                               <br>
-			      
-                                <input  name="telefone" maxlength="9" class="form-control" id="telefone">
+			      <br>
+                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone">
                             </div>
                        </td>
+                       </tr>
+                       <tr>
+
+            <td>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                              <br>
+            <br>
+                                <input type="text" name="email" class="form-control" id="email">
+                            </div>
+                       </td>
+                     </tr>
+                     <tr>
+                       <td>
+                            <div class="form-group">
+                                <label for="morada">Morada</label>
+                              <br>
+            <br>
+                                <input type="text" name="morada" class="form-control" id="morada">
+                            </div>
+                       </td>
+
 
                     </tr>
                     
@@ -102,7 +114,7 @@ button[type=button]:hover {
                 <p></p>
                 <input type='hidden' name='query' value="NovoVoluntario">
                 <input type="submit" value="Registar Voluntario" id="validar" class="btn btn-primary">
-                <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
+                <input type="submit" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"></input>
             </form>
         </div>
     </div>

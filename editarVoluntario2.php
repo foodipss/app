@@ -3,12 +3,13 @@
 require('conexao_perfil.php');
 
 $idVoluntario=$_POST['idVoluntario'];
-$codigoVoluntario=$_POST['codigoVoluntario'];
 $nome=$_POST['nome'];
 $telefone=$_POST['telefone'];
+$email=$_POST['email'];
+$morada=$_POST['morada'];
 
 
-$query="UPDATE voluntario SET  codigoVoluntario='$codigoVoluntario', nome='$nome', telefone='$telefone' WHERE idVoluntario= '$idVoluntario'";
+$query="UPDATE voluntario SET nome='$nome', telefone='$telefone', email='$email', morada='$morada' WHERE idVoluntario= '$idVoluntario'";
 
 $resultado=$mysqli->query($query);
 

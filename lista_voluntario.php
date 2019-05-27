@@ -48,7 +48,7 @@ $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
 $itens_por_pagina = 7;
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
 
-$query="SELECT idVoluntario, codigoVoluntario, nome, telefone FROM voluntario where visivel='1' ORDER BY codigoVoluntario LIMIT $inicio, $itens_por_pagina";
+$query="SELECT * FROM voluntario where visivel='1' ORDER BY codigoVoluntario LIMIT $inicio, $itens_por_pagina";
 $resultado=$mysqli->query($query)or die($mysqli->error);
 
 $num_total = mysqli_num_rows($resultado);
@@ -65,21 +65,27 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
     <thead>
       <tr>
-        <th>Código Voluntário</th>
         <th>Nome</th>
         <th>Telefone</th>
+        <th>Email</th>
+        <th>morada</th>
+        <th colspan="2">Operações</th>
       </tr>
     </thead>
 <tbody>
     <?php while($row=$resultado->fetch_assoc()){?>
       <tr>
-      <td><?php echo $row['codigoVoluntario'];?>
-      </td>
       <td>
       <?php echo $row['nome'];?>
       </td>
       <td>
       <?php echo $row['telefone'];?>
+      </td>
+      <td>
+      <?php echo $row['email'];?>
+      </td>
+      <td>
+      <?php echo $row['morada'];?>
       </td>
 
 <td>
