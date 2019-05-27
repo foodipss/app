@@ -78,7 +78,7 @@ button[type=button]:hover {
                                 
                          Código Beneficiário: 
 		    <br>
-			<input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
+			<input type="text" name="codigo_beneficiario" value = B  id="codigo_beneficiario">
 				
 				<br>
 				<?php 
@@ -95,32 +95,32 @@ button[type=button]:hover {
 
 				Nome:			
 				<br>
-                                <input type="text" name="nome" class="form-control" id="nome" >
+                                <input type="text" name="nome" id="nome" >
                  		<br/>
 		    
 		    		Morada:
 				<br>
-                                <input type="text" name="morada" class="form-control" id="morada" >
+                                <input type="text" name="morada"  id="morada" >
                       		 <br/>
 		    
 		    		Telefone:
 				    <br>
-                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone" >
+                                <input type="text" name="telefone" maxlength="9"  id="telefone" >
                				
 		    		<br/>
 		    		Número de Adultos:
 				    <br>
-                                <input type="text" name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
+                                <input type="text" name="nr_elementos_agregado"  id="nr_elementos_agregado" >
                            <br/>
 		    
 				 Número de Crianças:
 		    		<br>
-                                <input type="text" name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
+                                <input type="text" name="nr_elementos_criancas"  id="nr_elementos_criancas" >
                             <br/>
 		    
 		  	Restrições Alimentares:
 				    <br>
-                                <input type="text" name="restricoes" class="form-control" id="restricoes" >
+                                <input type="text" name="restricoes"  id="restricoes" >
                        <br/>
                 
                 <input type='hidden' name='query' value="NovoBeneficiário">
