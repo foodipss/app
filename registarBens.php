@@ -113,7 +113,7 @@ button[type=button]:hover {
 
   <input type="hidden" name="data" value="<?php echo date('d-m-Y H:i:s'); ?>" readonly="readonly">
 	<input type="submit" value="Registar Entrega de Bens">
-  <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> </button>
+  <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
   
 
             
