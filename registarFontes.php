@@ -41,10 +41,8 @@ input[type=submit] {
   cursor: pointer;
 }
 
-button[type=button]:hover {
-  background-color: #FF8000;
-}
-	      input[type=submit] {
+
+  input[type=submit] {
   width: 20%;
   background-color: #FFBF00;
   color: white;
