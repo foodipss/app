@@ -1,6 +1,43 @@
 <?php
 session_start();
 include_once("conexaoPesquisa.php");
+
+if (isset($_POST["add"])){
+        if (isset($_SESSION["cart"])){
+            $item_array_id = array_column($_SESSION["cart"],"product_id");
+            if (!in_array($_GET["idBem"],$item_array_id)){
+                $count = count($_SESSION["cart"]);
+                $item_array = array(
+                    'product_id' => $_GET["idBem"],
+                    'item_name' => $_POST["hidden_name"],
+                );
+                $_SESSION["cart"][$count] = $item_array;
+                echo '<script>window.location="refeicoes.php"</script>';
+            }else{
+                echo '<script>alert("Atenção!!Bem alimentar já adicionado")</script>';
+                echo '<script>window.location="refeicoes.php"</script>';
+            }
+        }else{
+            $item_array = array(
+                'product_id' => $_GET["idBem"],
+                'item_name' => $_POST["hidden_name"],
+            );
+            $_SESSION["cart"][0] = $item_array;
+        }
+    }
+
+    if (isset($_GET["action"])){
+        if ($_GET["action"] == "delete"){
+            foreach ($_SESSION["cart"] as $keys => $value){
+                if ($value["product_id"] == $_GET["idBem"]){
+                    unset($_SESSION["cart"][$keys]);
+                    echo '<script>alert("Bem alimentar removido com sucesso!")</script>';
+                    echo '<script>window.location="refeicoes.php"</script>';
+                }
+            }
+        }
+    }
+
 ?>
 <!DOCTYPE html>
     <html>
@@ -51,21 +88,26 @@ include_once("conexaoPesquisa.php");
 							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 							if($SendPesqUser){
 								$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-								$resultado_row_beneficiario = "SELECT codigo_beneficiario, restricoes FROM beneficiario WHERE codigo_beneficiario ='$codigo_beneficiario' ";
-								$resultado_row_beneficiario = mysqli_query($conn, $resultado_row_beneficiario) or die(mysqli_error($conn));
+								$query = "SELECT codigo_beneficiario, restricoes FROM beneficiario WHERE codigo_beneficiario ='$codigo_beneficiario' ";
+								$resultado_row_beneficiario = mysqli_query($conn, $query) or die(mysqli_error($conn));
 								$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
-							}
+							
 						?>
                             <tr>
                                 <td>
                                     Código
-                                    <?php echo $row_beneficiario['codigo_beneficiario'];?>
+                                    <?php 
+                                        echo $row_beneficiario['codigo_beneficiario'];
+                                    ?>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     Restrições
-                                    <?php echo $row_beneficiario['restricoes'];?>
+                                    <?php 
+                                        echo $row_beneficiario['restricoes'];
+                                    }
+                                    ?>
                                 </td>
                             </tr>
                     </table>
@@ -82,11 +124,14 @@ include_once("conexaoPesquisa.php");
 								$dia= date("d");
 								$mes= date("m");
 							?>
+
                             <td>
+
 								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-5)));	
+									echo date('d-m', mktime(0,0,0,$mes,($dia-5))); 
 								?>
 								<?php
+                                    $row_data5=0;
 									$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 										if($SendPesqUser){
 											$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
@@ -96,12 +141,13 @@ include_once("conexaoPesquisa.php");
 										}
 								?>
                             </td>
-
+                        
                             <td>
 								<?php
 									echo date('d-m', mktime(0,0,0,$mes,($dia-4)));	
 								?>
                                 <?php
+                                $row_data4=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
@@ -117,6 +163,7 @@ include_once("conexaoPesquisa.php");
 									echo date('d-m', mktime(0,0,0,$mes,($dia-3)));	
 								?>
                                 <?php
+                                $row_data3=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
@@ -132,6 +179,7 @@ include_once("conexaoPesquisa.php");
 									echo date('d-m', mktime(0,0,0,$mes,($dia-2)));	
 								?>
                                 <?php
+                                $row_data2=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
@@ -147,6 +195,7 @@ include_once("conexaoPesquisa.php");
 									echo date('d-m', mktime(0,0,0,$mes,($dia-1)));	
 								?>
                                 <?php
+                                $row_data1=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 									if($SendPesqUser){
 										$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
@@ -160,19 +209,19 @@ include_once("conexaoPesquisa.php");
 
                         <tr>
                             <td>
-                                <?php echo $row_data5['nomeBem'];?>
+                                <?php echo $row_data5['nomeBem']; ?>
                             </td>
                             <td>
-                                <?php echo $row_data4['nomeBem'];?>
+                                <?php echo $row_data4['nomeBem']; ?>
                             </td>
                             <td>
-                                <?php echo $row_data3['nomeBem'];?>
+                                <?php echo $row_data3['nomeBem']; ?>
                             </td>
                             <td>
-                                <?php echo $row_data2['nomeBem'];?>
+                                <?php echo $row_data2['nomeBem']; ?>
                             </td>
                             <td>
-                                <?php echo $row_data1['nomeBem'];?>
+                                <?php echo $row_data1['nomeBem']; ?>
                             </td>
                         </tr>
                     </table>
@@ -180,37 +229,45 @@ include_once("conexaoPesquisa.php");
 
                 <div style="float: left; width: 30%;">
                     <table>
-                        <tr>
-                            <th>Cesto</th>
-                        </tr>
+                    <tr>
+                        <th>Cesto</th>
+                        <br>
+                    </tr>
 
-                        <tr>
-                            <td>
-                                <?php
-								$cesto = "";
+                        <?php
+                            if(!empty($_SESSION["cart"])){
+                                
+                                foreach ($_SESSION["cart"] as $key => $value) {
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $value["item_name"]; ?></td>
+                                        <td><a href="refeicoes.php?action=delete&idBem=<?php echo $value["product_id"]; ?>">
+                                            <br><span class="btn-warning btn-lg">-</span></a></td>
 
-								if ($_SERVER["REQUEST_METHOD"] == "POST") {
-									$cesto = test_input($_POST["cesto"]);
-								}
-
-								function test_input($data) {
-									$data = trim($data);
-									$data = stripslashes($data);
-									$data = htmlspecialchars($data);
-									return $data;
-								}
-							?>
-
+                                    </tr>
                                     <?php
-								echo $cesto;
-							?>
-                            </td>
-                        </tr>
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td>
+                                        <form method="POST" action="registo_refeicao.php">
+                                        <button type="submit" class="btn-warning btn-lg">Confirmar</button>
+                                        </form>
+                                    </td>
+                                    </tr>
+                                    <?php
+                                }
+                            ?>
                     </table>
                 </div>
             </div>
 
             <div style="width: 100%;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <div style="float: left; width: 100%;">
                     <table>
                         <tr>
@@ -218,151 +275,39 @@ include_once("conexaoPesquisa.php");
                         </tr>
                     </table>
                 </div>
+                
+                    <?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' ";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
 
-                <div style="float: left; width: 16%;">
-                    <?php 
-					$sopa = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Sopas'";
-					$conexaosopa = $conn->query($sopa) or die($conn->error);
-				?>
-                        <table>
-                            <tr>
-                                <th>Sopa</th>
-                            </tr>
-                            <?php while ($alimentos_sopa = $conexaosopa->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos_sopa['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
-                </div>
+                            while ($row = mysqli_fetch_array($result)) {
 
-                <div style="float: left; width: 16%;">
-                    <?php 
-			$carne = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Carne'";
-			$conexaocarne = $conn->query($carne) or die($conn->error);
-		?>
-                        <table>
-                            <tr>
-                                <th>Carne</th>
-                            </tr>
-                            <?php while ($alimentos = $conexaocarne->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
-                </div>
+                        ?>
+                        <div style="float: left; width: 16%;">
+                            
+                            <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
 
-                <div style="float: left; width: 16%;">
-                    <?php 
-			$peixe = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Peixe'";
-			$conexaopeixe = $conn->query($peixe) or die($conn->error);
-		?>
-                        <table>
-                            <tr>
-                                <th>Peixe</th>
-                            </tr>
-                            <?php while ($alimentos = $conexaopeixe->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
+                                <div class="product">
+                                    
+                                    <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+                                    
+                                    
+                                    <input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                                   
+                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg"
+                                           value="+">
+                                </div>
+                            </form>
+                            
                 </div>
+               
 
-                <div style="float: left; width: 16%;">
-                    <?php 
-			$acompanhamento = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Acompanhamento'";
-			$conexaoacompanhamento = $conn->query($acompanhamento) or die($conn->error);
-		?>
-                        <table>
-                            <tr>
-                                <th>Acompanhamento</th>
-                            </tr>
-                            <?php while ($alimentos = $conexaoacompanhamento->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
-                </div>
+                    <?php
+                }
+            }
+        ?>
 
-                <div style="float: left; width: 16%;">
-                    <?php 
-			$composto = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Composto'";
-			$conexaocomposto = $conn->query($composto) or die($conn->error);
-		?>
-                        <table>
-                            <tr>
-                                <th>Composto</th>
-                            </tr>
-                            <?php while ($alimentos = $conexaocomposto->fetch_array()) { ?>
-                                <tr>
-                                    <td>
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                    </td>
-                                    <td>
-                                        <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                        </table>
-                </div>
-
-                <div style="float: left; width: 16%;">
-                    <?php 
-						$outro = "SELECT nomeBem FROM bem WHERE visivel='1' AND tipoBem='Outros'";
-						$conexaooutro = $conn->query($outro) or die($conn->error);
-					?>
-                    <table>
-                        <tr>
-                            <th>Outro</th>
-                        </tr>
-                        <?php while ($alimentos = $conexaooutro->fetch_array()) { ?>
-                            <tr>
-                                <td>
-                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-										<input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
-                                </td>
-                                <td>
-                                    <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </div>
-            </div>
+        </div>
     </body>
-
-    </html>
+</html>
