@@ -40,7 +40,7 @@ input[type=submit]:hover {
 
 	    
 input[type=text] {
-  width: 20%;
+  width: 40%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
