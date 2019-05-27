@@ -73,6 +73,8 @@ input[type=submit]:hover {
 			}
 		
 			?>
+	
+	<br>
   Morada da Fonte: 
   <br>      
   <input type ="text" name="moradafonte" required>
