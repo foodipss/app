@@ -110,11 +110,11 @@ $pagina_seguinte = $pagina + 1;
       if ($pagina_anterior != 0){ ?>
 
       <a href="mostrarFontes.php?pagina=<?php echo $pagina_anterior; ?>" >
-       <span class="glyphicon glyphicon-chevron-left"></span>
+       <span class="glyphicon glyphicon-chevron-left" style="color:#000000"></span>
       </a>
 
     <?php }else { ?>
-      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="glyphicon glyphicon-chevron-left" style="color:#000000"></span>
 
     <?php } ?>
 
@@ -131,11 +131,11 @@ $pagina_seguinte = $pagina + 1;
       if ($pagina_seguinte <= $num_total){ ?>
 
       <a href="mostrarFontes.php?pagina=<?php echo $pagina_seguinte ; ?>">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" style="color:#000000"></span>
       </a>
 
     <?php }else { ?>
-      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="glyphicon glyphicon-chevron-right" style="color:#000000"></span>
 
     <?php } ?>
 
