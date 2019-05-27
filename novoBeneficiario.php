@@ -25,7 +25,7 @@ h5 {
 	    
 input[type=text], select {
 	
-  width: 100%;
+  width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -68,6 +68,7 @@ button[type=button]:hover {
 
 </style>
   <center> <h5><b> Registar Novo Beneficiario </b></h5></center>
+	  <p>
   </header>
 
 	<body>
@@ -104,7 +105,7 @@ button[type=button]:hover {
                                 <label for='nome'>Nome</label>
 							
 				<br>
-                                <input type="text" name="nome" class="form-control" id="nome" >
+                                <input type="text" name="nome" id="nome" >
                        </div>
                         </td>
 
