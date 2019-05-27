@@ -94,7 +94,21 @@ button[type=button]:hover {
                                 
                                 <label for='codigo_beneficiario'>Código Beneficiário</label>
 								<br>
-                                <input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
+                           
+			<input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
+				
+				
+				<?php 
+			
+			include_once("conexaoPesquisa.php");
+			
+				$result = $conn->query("SELECT * FROM beneficiario ORDER BY codigo_beneficiario DESC LIMIT 1");
+				while($rows = $result->fetch_assoc()) {
+				$codigo = $rows['codigo_beneficiario'];
+			    	echo "Nota: O último código registado foi o " , $codigo;
+			}
+		
+			?>
                        </div>
                         </td>
 
