@@ -39,18 +39,6 @@ input[type=submit]:hover {
 }
 
 	    
-input[type=text] {
-  width: 40%;
-  background-color: #FFBF00;
-  color: white;
-  padding: 14px 20px;
-  
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-	    
 button[type=button] {
   width: 20%;
   background-color: #FFBF00;
