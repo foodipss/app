@@ -96,7 +96,7 @@ button[type=button]:hover {
                   <br/><br>
   Telefone da Fonte:
       <br>  
-  <input type="text" name="contactofonte" required>
+  <input type="text" name="contactofonte" maxlength="9" required>
                   <br/><br>
         
                   <input type="submit" value="Registar Fonte">
