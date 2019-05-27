@@ -53,17 +53,17 @@ button[type=button]:hover {
   background-color: #FF8000;
 }
 
-	    
-input[type=text] {
-  width: 20%;
-  background-color: #FFBF00;
-  color: white;
-  padding: 14px 20px;
-  
-  border: none;
+	input[type=text], select {
+	
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  cursor: pointer;
-}
+  box-sizing: border-box;
+}    
+
 
 
 
