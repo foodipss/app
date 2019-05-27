@@ -18,7 +18,7 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
-
+	      
 input[type=text], select {
 	
   width: 50%;
