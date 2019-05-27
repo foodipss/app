@@ -21,7 +21,7 @@ h5 {
 	      
 input[type=text], select {
 	
-  width: 50%;
+  width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -31,7 +31,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-  width: 50%;
+  width: 20%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -89,6 +89,7 @@ input[type=submit]:hover {
                   <br/><br>
         
                   <input type="submit" value="Registar Fonte">
+		  <input type="submit" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> </input>
 </form>       
 
 
