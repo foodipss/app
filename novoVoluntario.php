@@ -22,6 +22,17 @@ h5 {
   font-family: ariana;
   font-size: 30px;
 }
+	    
+ input[type=text], select {
+	
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 input[type=submit] {
   width: 20%;
