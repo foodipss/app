@@ -55,6 +55,21 @@ input[type=submit]:hover {
   <br>      
   <input type="text" name="nomefonte" required>
                   <br/><br>
+	
+		  <?php 
+			
+			include_once("conexaoPesquisa.php");
+			
+				$result = $conn->query("SELECT * FROM fonte ORDER BY codigo_fonte DESC LIMIT 1");
+				while($rows = $result->fetch_assoc()) {
+				$codigo = $rows['codigo_fonte'];
+			    	echo "Nota: O último código registado foi o " , $codigo;
+			}
+		
+			?>	
+	
+	
+<br>
   Código Fonte:
   <br>
   <input type="text" name="codigo_fonte" value = F required>
