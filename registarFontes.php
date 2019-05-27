@@ -54,7 +54,13 @@ input[type=submit]:hover {
   Nome da Fonte: 
   <br>      
   <input type="text" name="nomefonte" required>
+                  <br/><br>	
+<br>
+  Código Fonte:
+  <br>
+  <input type="text" name="codigo_fonte" value = F required>
                   <br/><br>
+
 	
 		  <?php 
 			
@@ -66,14 +72,7 @@ input[type=submit]:hover {
 			    	echo "Nota: O último código registado foi o " , $codigo;
 			}
 		
-			?>	
-	
-	
-<br>
-  Código Fonte:
-  <br>
-  <input type="text" name="codigo_fonte" value = F required>
-                  <br/><br>
+			?>
   Morada da Fonte: 
   <br>      
   <input type ="text" name="moradafonte" required>
