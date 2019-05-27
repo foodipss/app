@@ -38,6 +38,8 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+	    
+	    
 
 input[type=submit] {
   width: 20%;
@@ -72,7 +74,7 @@ input[type=submit]:hover {
                            
 			<input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
 				
-				
+				<br>
 				<?php 
 			
 			include_once("conexaoPesquisa.php");
@@ -114,7 +116,7 @@ input[type=submit]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
-                                <input name="telefone" maxlength="9" class="form-control" id="telefone" >
+                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone" >
                             </div>
                        </td>
 
@@ -124,7 +126,7 @@ input[type=submit]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_agregado">Número de Adultos</label>
-                                <input name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
+                                <input type="text" name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
                             </div>
                        </td>
                      </tr>
@@ -133,7 +135,7 @@ input[type=submit]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_criancas">Número de Criancas</label>
-                                <input name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
+                                <input type="text" name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
                             </div>
                        </td>
                      </tr>
@@ -142,7 +144,7 @@ input[type=submit]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
-                                <input name="restricoes" class="form-control" id="restricoes" >
+                                <input type="text" name="restricoes" class="form-control" id="restricoes" >
                             </div>
                        </td>
                      </tr>
