@@ -50,11 +50,8 @@ input[type=text] {
   cursor: pointer;
 }
 
-input[type=text]:hover {
-  background-color: #FF8000;
-}
 	    
-	     button[type=button] {
+button[type=button] {
   width: 20%;
   background-color: #FFBF00;
   color: white;
