@@ -42,7 +42,7 @@ input[type=submit] {
 }
 
 
-  input[type=submit] {
+  button[type=button] {
   width: 20%;
   background-color: #FFBF00;
   color: white;
