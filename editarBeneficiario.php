@@ -102,9 +102,11 @@ Nome:
   <br/>
   
   Número de Adultos:
+	<br>
     <input type="text" name="nr_elementos_agregado" value="<?php echo $row['nr_elementos_agregado']; ?>"/>
    <br/>
  Número de Criancas:
+	<br>
     <input type="text" name="nr_elementos_criancas" value="<?php echo $row['nr_elementos_criancas']; ?>"/>
    <br/>
   
