@@ -33,7 +33,7 @@ h5 {
 
 input[type=text], select {
 	
-  width: 30%;
+  width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
