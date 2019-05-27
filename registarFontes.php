@@ -59,8 +59,7 @@ input[type=submit]:hover {
   Código Fonte:
   <br>
   <input type="text" name="codigo_fonte" value = F required>
-                  <br/><br>
-
+                  <br/>
 	
 		  <?php 
 			
@@ -74,6 +73,7 @@ input[type=submit]:hover {
 		
 			?>
 	
+	<br>
 	<br>
   Morada da Fonte: 
   <br>      
