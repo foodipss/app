@@ -74,13 +74,10 @@ button[type=button]:hover {
 	<body>
   
             <form action="QueryBeneficiario.php" method="post" id="beneficiario">
-                <table id="tableBeneficiario">
-                  <tr>
-                        <td>    <div class="form-group">
+              
                                 
-                                <label for='codigo_beneficiario'>Código Beneficiário</label>
-								<br>
-                           
+                         Código Beneficiário: 
+		    <br>
 			<input type="text" name="codigo_beneficiario" value = B class="form-control" id="codigo_beneficiario">
 				
 				<br>
@@ -95,89 +92,41 @@ button[type=button]:hover {
 			}
 		
 			?>
-                       </div>
-                        </td>
 
-                    </tr>
-                    <tr>
-                        <td>    <div class="form-group">
-                                
-                                <label for='nome'>Nome</label>
-							
+				Nome:			
 				<br>
-                                <input type="text" name="nome" id="nome" >
-                       </div>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>    <div class="form-group">
-                                
-                                <label for='nome'>Morada</label>
-								
+                                <input type="text" name="nome" class="form-control" id="nome" >
+                 		<br/>
+		    
+		    		Morada:
 				<br>
                                 <input type="text" name="morada" class="form-control" id="morada" >
-                       </div>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="telefone">Telefone</label>
-				    
+                      		 <br/>
+		    
+		    		Telefone:
 				    <br>
                                 <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone" >
-                            </div>
-                       </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="nr_elementos_agregado">Número de Adultos</label>
-				    
+               				
+		    		<br/>
+		    		Número de Adultos:
 				    <br>
                                 <input type="text" name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
-                            </div>
-                       </td>
-                     </tr>
-
-					 <tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="nr_elementos_criancas">Número de Criancas</label>
-				    <br>
+                           <br/>
+		    
+				 Número de Crianças:
+		    		<br>
                                 <input type="text" name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
-                            </div>
-                       </td>
-                     </tr>
-
-                      <tr>
-                        <td>
-                            <div class="form-group">
-                                <label for="restricoes">Restricoes Alimentares</label>
-				    
+                            <br/>
+		    
+		  	Restrições Alimentares:
 				    <br>
                                 <input type="text" name="restricoes" class="form-control" id="restricoes" >
-                            </div>
-                       </td>
-                     </tr>
-
-
-
-                 
-                  
-                </table>
-                <p></p>
+                       <br/>
+                
                 <input type='hidden' name='query' value="NovoBeneficiário">
                 <input type="submit" value="Registar Beneficiário" id="validar" class="btn btn-primary">
                  <button type="button" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
             </form>
-        </div>
-    </div>
+     
 </body>
 </html>
