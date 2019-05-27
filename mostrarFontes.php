@@ -31,7 +31,7 @@ $conn = mysqli_connect("us-cdbr-iron-east-03.cleardb.net", "b74a37105022bd", "c0
 // pegar a pagina atual
 $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
 
-$itens_por_pagina = 5;
+$itens_por_pagina = 7;
 
 
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
