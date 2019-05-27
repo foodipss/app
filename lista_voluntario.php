@@ -6,7 +6,7 @@
 
 
 <body>
-	<?php require_once "index.php"; ?>
+  <?php require_once "index.php"; ?>
 </body>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +15,22 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-	       <style>
-
+  <header class="w3-container" style="padding-top:40px">
+         <style>
 h5 {
   color: black;
   text-align: center;
   font-family: ariana;
   font-size: 30px;
+}
+button {
+    width: 20%;
+    background-color: #FFBF00;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
    </style>
    <center> <h5><b> Lista de Voluntários </b></h5></center>
@@ -33,32 +41,27 @@ h5 {
 
 <!-- Ligação Base de dados -->
 <?php
-require('conexao_perfil.php');
 
+require('conexao_perfil.php');
 // pegar a pagina atual
 $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
-
-$itens_por_pagina = 5;
-
-
+$itens_por_pagina = 7;
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
 
 $query="SELECT idVoluntario, codigoVoluntario, nome, telefone FROM voluntario where visivel='1' ORDER BY codigoVoluntario LIMIT $inicio, $itens_por_pagina";
-
-
 $resultado=$mysqli->query($query)or die($mysqli->error);
 
 $num_total = mysqli_num_rows($resultado);
 
 //defifnir o numero de paginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
+
 ?>
 
 
 <div class="colunaListaVoluntario">
-	<a href="novoVoluntario.php">Novo Voluntário</a>
- 	<p></p>
- 	<table class="table" id="voluntario">
+  <p></p>
+  <table class="table" id="voluntario">
 
     <thead>
       <tr>
@@ -68,22 +71,22 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
       </tr>
     </thead>
 <tbody>
-		<?php while($row=$resultado->fetch_assoc()){?>
-			<tr>
-			<td><?php echo $row['codigoVoluntario'];?>
-			</td>
-			<td>
-			<?php echo $row['nome'];?>
-			</td>
-			<td>
-			<?php echo $row['telefone'];?>
-			</td>
+    <?php while($row=$resultado->fetch_assoc()){?>
+      <tr>
+      <td><?php echo $row['codigoVoluntario'];?>
+      </td>
+      <td>
+      <?php echo $row['nome'];?>
+      </td>
+      <td>
+      <?php echo $row['telefone'];?>
+      </td>
 
 <td>
-	<a href="editarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>"class="fa fa-edit" style="font-size:24px;color:black"></a>
+  <a href="editarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>"class="fa fa-edit" style="font-size:24px;color:black"></a>
 </td>
-	<td>
-	<a href="apagarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>"class="fa fa-trash-o" style="font-size:24px;color:red"></a>
+  <td>
+  <a href="apagarVoluntario.php?idVoluntario=<?php echo $row['idVoluntario'];?>"class="fa fa-trash-o" style="font-size:24px;color:red"></a>
 </td>
 
 <?php } ?>
@@ -92,10 +95,8 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 </table>
 
 <?php
-
 $pagina_anterior = $pagina - 1;
 $pagina_seguinte = $pagina + 1;
-
 ?>
 
 <nav class="text-center">
@@ -141,5 +142,11 @@ $pagina_seguinte = $pagina + 1;
 </nav>
 
 </div>
+
+<form method="get" action="novoVoluntario.php" >
+    <button type="submit">Registar Novo Voluntário</button>
+</form>
+
+
 </body>
 </html>
