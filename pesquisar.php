@@ -148,9 +148,15 @@ input[type=submit]:hover {
 				};
 			?>
 
-			<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
-			<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
-			<p> <b>Tupperwares em Falta:</b> <?php echo $saldo;?></p>
+			<p> <b>Benefiário:</b> 
+				<br>
+				<?php echo $row_row_beneficiario['nome'];?> </p>
+			<p> <b>Contacto:</b> 
+				<br>
+				<?php echo $row_row_beneficiario['telefone'];?> </p>
+			<p> <b>Tupperwares em Falta:</b>
+				<br>
+				<?php echo $saldo;?></p>
 			<br>
 			<tr>
 				<td>Data</td>
