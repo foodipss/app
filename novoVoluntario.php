@@ -24,7 +24,7 @@ h5 {
 }
 
 input[type=submit] {
-  width: 100%;
+  width: 20%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -38,10 +38,9 @@ input[type=submit]:hover {
   background-color: #FF8000;
 }
 
-      
-button[type=button]{
-	
-	  width: 100%;
+	    
+input[type=text] {
+  width: 20%;
   background-color: #FFBF00;
   color: white;
   padding: 14px 20px;
@@ -49,11 +48,12 @@ button[type=button]{
   border: none;
   border-radius: 4px;
   cursor: pointer;
-	
 }
-button[type=button]:hover {
+
+input[type=text]:hover {
   background-color: #FF8000;
 }
+
 </style>
     
   <center> <h5><b> Registar Novo Voluntário </b></h5></center>
@@ -62,17 +62,7 @@ button[type=button]:hover {
   
             <form action="QueryVoluntario.php" method="post" id="func">
                 <table id="tableFunc">
-                  <tr>
-                        <td>    <div class="form-group">
-                                
-                                <label for='codigoVoluntario'>Código Voluntário</label>
-                          <br>
-			  <br>
-                                <input type="text" name="codigoVoluntario" class="form-control" id="codigoVoluntario">
-                       </div>
-                        </td>
-
-                    </tr>
+                  
                     <tr>
                         <td>    <div class="form-group">
                                 
@@ -91,7 +81,7 @@ button[type=button]:hover {
                                 <label for="telefone">Telefone</label>
                               <br>
 			      <br>
-                                <input name="telefone" maxlength="9" class="form-control" id="telefone">
+                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone">
                             </div>
                        </td>
 
@@ -102,7 +92,7 @@ button[type=button]:hover {
                 <p></p>
                 <input type='hidden' name='query' value="NovoVoluntario">
                 <input type="submit" value="Registar Voluntario" id="validar" class="btn btn-primary">
-                <button type="button" value="Voltar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
+                <input type="submit" value="Cancelar" onClick="history.go(-1)" class="btn btn-primary"></input>
             </form>
         </div>
     </div>
