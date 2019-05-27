@@ -107,7 +107,7 @@ button[type=button]:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Nome</label>
-								<br>
+							
 				<br>
                                 <input type="text" name="nome" class="form-control" id="nome" >
                        </div>
@@ -119,7 +119,7 @@ button[type=button]:hover {
                         <td>    <div class="form-group">
                                 
                                 <label for='nome'>Morada</label>
-								<br>
+								
 				<br>
                                 <input type="text" name="morada" class="form-control" id="morada" >
                        </div>
@@ -131,7 +131,7 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
-				    <br>
+				    
 				    <br>
                                 <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone" >
                             </div>
@@ -143,7 +143,7 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_agregado">Número de Adultos</label>
-				    <br>
+				    
 				    <br>
                                 <input type="text" name="nr_elementos_agregado" class="form-control" id="nr_elementos_agregado" >
                             </div>
@@ -154,6 +154,7 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="nr_elementos_criancas">Número de Criancas</label>
+				    <br>
                                 <input type="text" name="nr_elementos_criancas" class="form-control" id="nr_elementos_criancas" >
                             </div>
                        </td>
@@ -163,7 +164,7 @@ button[type=button]:hover {
                         <td>
                             <div class="form-group">
                                 <label for="restricoes">Restricoes Alimentares</label>
-				    <br>
+				    
 				    <br>
                                 <input type="text" name="restricoes" class="form-control" id="restricoes" >
                             </div>
