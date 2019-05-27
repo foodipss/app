@@ -17,15 +17,26 @@
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:40px">
-         <style>
 
+<style>
 h5 {
   color: black;
   text-align: center;
   font-family: ariana;
   font-size: 30px;
 }
+button {
+    width: 20%;
+    background-color: #FFBF00;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
    </style>
+
+    
    <center> <h5><b> Lista de Beneficiário </b></h5></center>
     <p>
   </header>
@@ -44,13 +55,11 @@ $itens_por_pagina = 5;
 
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
 
-$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, nr_elementos_criancas,codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT $inicio, $itens_por_pagina"; 
+$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT $inicio, $itens_por_pagina"; 
 
 $resultado=$mysqli->query($query)or die($mysqli->error);
 
 $num_total = mysqli_num_rows($resultado);
-
-
 
 
 //defifnir o numero de paginas
@@ -59,7 +68,6 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 
 <div class="colunaListaBeneficiario">
-<a href="novoBeneficiario.php">Novo Beneficiário</a>
  	<p></p>
 
    	<table class="table">
@@ -70,10 +78,9 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
           <th>Nome</th>
           <th>Morada</th>
           <th>Telefone</th>
-          <th>Número de Adultos</th>
-		  <th>Número de Criancas</th>
+          <th>Número Elementos Agregado</th>
           <th>Restrições Alimentares</th>
-          <th colspan=2></th>
+          <th colspan=2>Operações</th>
         </tr>
       </thead>
   <tbody>
@@ -85,15 +92,14 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
         <td><?php echo $row['morada'];?></td>
   			<td><?php echo $row['telefone'];?></td>
         <td><?php echo $row['nr_elementos_agregado'];?></td>
-		<td><?php echo $row['nr_elementos_criancas'];?></td>
         <td><?php echo $row['restricoes'];?></td>
 
 
   <td>
-  	<a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-edit" style="font-size:24px;color:black"></a>
+  	<a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>">Editar Informações </a>
   </td>
   	<td>
-  	<a href="apagarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"class="fa fa-trash-o" style="font-size:24px;color:red"> </a>
+  	<a href="apagarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>">Apagar Beneficiário </a>
   </td>
 </tr>
 
@@ -152,4 +158,9 @@ $pagina_seguinte = $pagina + 1;
   </ul>
 </nav>
 </div>
+<form method="get" action="novoBeneficiario.php" >
+    <button type="submit">Registar Novo Beneficiário</button>
+</form>
+
+
 </html>
