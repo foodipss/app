@@ -7,9 +7,9 @@ session_start();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
+
   <?php require_once "index.php"; ?>
-</body>
+
 
 
   <!-- Header -->
@@ -70,6 +70,7 @@ button[type=button]:hover {
   <center> <h5><b> Registar Novo Beneficiario </b></h5></center>
   </header>
 
+	<body>
   
             <form action="QueryBeneficiario.php" method="post" id="beneficiario">
                 <table id="tableBeneficiario">
