@@ -148,15 +148,9 @@ input[type=submit]:hover {
 				};
 			?>
 
-			<p> <b>Benefiário:</b> 
-				<br>
-				<?php echo $row_row_beneficiario['nome'];?> </p>
-			<p> <b>Contacto:</b> 
-				<br>
-				<?php echo $row_row_beneficiario['telefone'];?> </p>
-			<p> <b>Tupperwares em Falta:</b>
-				<br>
-				<?php echo $saldo;?></p>
+			<p> <b>Benefiário:</b> <?php echo $row_row_beneficiario['nome'];?> </p>
+			<p> <b>Contacto:</b> <?php echo $row_row_beneficiario['telefone'];?> </p>
+			<p> <b>Tupperwares em Falta:</b><?php echo $saldo;?></p>
 			<br>
 			<tr>
 				<td>Data</td>
@@ -238,10 +232,13 @@ $pagina_seguinte = $pagina + 1;
 		<form method="POST" action="proc_registar.php">
 			<br>
 			<label>Beneficiario: </label>
+			<br>
 			<input name="idBeneficiario"   value="<?php echo $row_row_beneficiario['idBeneficiario'];?>"><br><br>
 			<label>A entregar: </label>
+			<br>
 			<input name="quantidadeEntregue"  value="<?php echo $saldo;?>"><br><br>
 			<label>Levou: </label>
+			<br>
 			<input name="quantidadeLevou" value=""><br><br>
 
 			<button type="submit"  data-toggle="modal" data-target="#myModal">Registar</button>
