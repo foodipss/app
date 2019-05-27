@@ -57,6 +57,7 @@ input[type=submit]:hover {
   background-color: #FF8000;
 }
 
+	      
 
 
 </style>
@@ -97,6 +98,7 @@ input[type=submit]:hover {
 	<br>
 
   <input type="hidden" name="data" value="<?php echo date('d-m-Y H:i:s'); ?>" readonly="readonly">
+  <input type="submit" value="Voltar" onClick="history.go(-1)" class="btn btn-primary"> Cancelar </button>
   
 
             <input type="submit" value="Registar Entrega de Bens">
