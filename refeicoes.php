@@ -2,10 +2,10 @@
 session_start();
 include_once("conexaoPesquisa.php");
 ?>
-
+<!DOCTYPE html>
     <html>
 
-    <title>REFOOD - Preparação de refeições</title>
+    <title>REFOOD</title>
 
     <head>
         <meta charset="UTF-8">
@@ -21,12 +21,12 @@ include_once("conexaoPesquisa.php");
             <div style="width: 100%;">
                 <div style="float: left; width: 30%;">
                     <table>
-                        <tr style="padding: 25px">
-                            <th style="padding: 25px">Beneficiário</th>
+                        <tr>
+                            <th>Beneficiário</th>
                         </tr>
 
-                        <tr style="padding: 25px">
-                            <td style="padding: 25px">
+                        <tr>
+                            <td>
                                 <form method="POST" action="">
                                     <input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
                                     <datalist id="browsers">
@@ -71,11 +71,11 @@ include_once("conexaoPesquisa.php");
 
                 <div style="float: left; width: 40%;">
                     <table style="width:90%" class="table">
-                        <tr style="padding: 25px">
-                            <th style="padding: 25px">Histórico</th>
+                        <tr>
+                            <th>Histórico</th>
                         </tr>
 
-                        <tr style="padding: 25px">
+                        <tr>
                             <td>
 
                                 <?php
@@ -147,7 +147,7 @@ include_once("conexaoPesquisa.php");
                             </td>
                         </tr>
 
-                        <tr style="padding: 25px">
+                        <tr>
                             <td>
                                 <?php echo $row_data5['nomeBem'];?>
                             </td>
@@ -169,12 +169,12 @@ include_once("conexaoPesquisa.php");
 
                 <div style="float: left; width: 30%;">
                     <table>
-                        <tr style="padding: 25px">
-                            <th style="padding: 25px">Cesto</th>
+                        <tr>
+                            <th>Cesto</th>
                         </tr>
 
-                        <tr style="padding: 25px">
-                            <td style="padding: 25px">
+                        <tr>
+                            <td>
                                 <?php
 								$cesto = "";
 
@@ -194,22 +194,16 @@ include_once("conexaoPesquisa.php");
 								echo $cesto;
 							?>
                             </td>
-                            <td>
-                                <input type="submit" name="submit" class="btn-warning btn-lg" value="-"> </td>
-                            <td>
-                                <input type="submit" name="submit" class="btn-warning btn-lg" value="+"> </td>
                         </tr>
                     </table>
                 </div>
             </div>
 
-            <br>
-
             <div style="width: 100%;">
                 <div style="float: left; width: 100%;">
                     <table>
-                        <tr style="padding: 25px">
-                            <th style="padding: 25px">Pratos do dia</th>
+                        <tr>
+                            <th>Pratos do dia</th>
                         </tr>
                     </table>
                 </div>
@@ -223,11 +217,11 @@ include_once("conexaoPesquisa.php");
                             <tr>
                                 <th>Sopa</th>
                             </tr>
-                            <?php while ($alimentos = $conexaosopa->fetch_array()) { ?>
+                            <?php while ($alimentos_sopa = $conexaosopa->fetch_array()) { ?>
                                 <tr>
                                     <td>
                                         <form method="post" action="<?php echo htmlspecialchars($_SERVER[" PHP_SELF "]);?>">
-                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos['nomeBem']?>">
+                                            <input style="padding: 10px" name="cesto" value="<?php echo $alimentos_sopa['nomeBem']?>">
                                     </td>
                                     <td>
                                         <input type="submit" name="submit" class="btn-warning btn-lg" value="+">
@@ -357,7 +351,6 @@ include_once("conexaoPesquisa.php");
                                 <?php } ?>
                         </table>
                 </div>
-
             </div>
     </body>
 
