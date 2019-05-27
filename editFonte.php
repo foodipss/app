@@ -29,13 +29,13 @@
   
   <tr>
     <td width="20"><b>Morada</b></td>
-    <td width="30"><input type="text" name="moradafonte" size="25" value="<?php echo $row['moradafonte']; ?>"/>
+    <td width="30"><input type="text" name="moradafonte" value="<?php echo $row['moradafonte']; ?>"/>
     </td>
   </tr>
 
   <tr>
     <td width="20"><b>Email</b></td>
-    <td width="30"><input type="text" name="emailfonte" maxlength="9" size="25" value="<?php echo $row['emailfonte']; ?>"/>
+    <td width="30"><input type="text" name="emailfonte" size="25" value="<?php echo $row['emailfonte']; ?>"/>
     </td>
   </tr>
 
