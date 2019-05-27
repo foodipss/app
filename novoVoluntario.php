@@ -23,7 +23,7 @@ h5 {
   font-size: 30px;
 }
 	    
- input[type=text], select {
+ input {
 	
   width: 40%;
   padding: 12px 20px;
@@ -78,8 +78,8 @@ button[type=button]:hover {
                                 
                                 <label for='nome'>Nome</label>
                           <br>
-			  <br>
-                                <input type="text" name="nome" class="form-control" id="nome">
+			  
+                                <input name="nome" class="form-control" id="nome">
                        </div>
                         </td>
 
@@ -90,8 +90,8 @@ button[type=button]:hover {
                             <div class="form-group">
                                 <label for="telefone">Telefone</label>
                               <br>
-			      <br>
-                                <input type="text" name="telefone" maxlength="9" class="form-control" id="telefone">
+			      
+                                <input  name="telefone" maxlength="9" class="form-control" id="telefone">
                             </div>
                        </td>
 
