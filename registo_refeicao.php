@@ -9,11 +9,12 @@ date_default_timezone_set('Europe/London');
 
 $idRefeicao = filter_input(INPUT_POST, 'idRefeicao', FILTER_SANITIZE_NUMBER_INT);
 $idBem = filter_input(INPUT_POST, 'idBem', FILTER_SANITIZE_NUMBER_INT);
-$idBeneficiario = filter_input(INPUT_POST, 'idBeneficiario', FILTER_SANITIZE_NUMBER_INT);
-$data = date("y/m/d H:i:s");
+//$idBenef = filter_input(INPUT_POST, 'idBeneficiario', FILTER_SANITIZE_NUMBER_INT);
+$idBenef = 2;
+$data = date("Y/m/d");
 
 
-$registo = "INSERT INTO refeicao (idRefeicao, idBem, idBeneficiario, data) VALUES ('$idRefeicao', '$idBem', '$idBeneficiario','$data')";
+$registo = "INSERT INTO refeicao (idRefeicao, idBem, idBenef, data) VALUES ('$idRefeicao', '$idBem', '$idBenef','$data')";
 $resultado_registo = mysqli_query($conn, $registo) or die(mysqli_error($conn));
 
 if(mysqli_insert_id($conn)){

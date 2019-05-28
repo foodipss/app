@@ -31,7 +31,7 @@ if (isset($_POST["add"])){
             foreach ($_SESSION["cart"] as $keys => $value){
                 if ($value["product_id"] == $_GET["idBem"]){
                     unset($_SESSION["cart"][$keys]);
-                    echo '<script>alert("Bem alimentar removido com sucesso!")</script>';
+                    echo '<script>alert("Bem removido com sucesso!")</script>';
                     echo '<script>window.location="refeicoes.php"</script>';
                 }
             }
@@ -118,7 +118,6 @@ if (isset($_POST["add"])){
                         <tr>
                             <th>Histórico</th>
                         </tr>
-
                         <tr>
 							<?php
 								$dia= date("d");
@@ -127,9 +126,7 @@ if (isset($_POST["add"])){
 
                             <td>
 
-								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-5))); 
-								?>
+								<?php echo date('d-m', mktime(0,0,0,$mes,($dia-5))); ?>
 								<?php
                                     $row_data5=0;
 									$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -141,11 +138,8 @@ if (isset($_POST["add"])){
 										}
 								?>
                             </td>
-                        
                             <td>
-								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-4)));	
-								?>
+								<?php echo date('d-m', mktime(0,0,0,$mes,($dia-4))); ?>
                                 <?php
                                 $row_data4=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -157,11 +151,8 @@ if (isset($_POST["add"])){
 									}
 								?>
                             </td>
-
                             <td>
-								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-3)));	
-								?>
+								<?php echo date('d-m', mktime(0,0,0,$mes,($dia-3))); ?>
                                 <?php
                                 $row_data3=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -173,11 +164,8 @@ if (isset($_POST["add"])){
 									}
 								?>
                             </td>
-
                             <td>
-								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-2)));	
-								?>
+								<?php echo date('d-m', mktime(0,0,0,$mes,($dia-2))); ?>
                                 <?php
                                 $row_data2=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -189,11 +177,8 @@ if (isset($_POST["add"])){
 									}
 								?>
                             </td>
-
                             <td>
-								<?php
-									echo date('d-m', mktime(0,0,0,$mes,($dia-1)));	
-								?>
+								<?php echo date('d-m', mktime(0,0,0,$mes,($dia-1))); ?>
                                 <?php
                                 $row_data1=0;
 								$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
@@ -206,7 +191,6 @@ if (isset($_POST["add"])){
 								?>
                             </td>
                         </tr>
-
                         <tr>
                             <td>
                                 <?php echo $row_data5['nomeBem']; ?>
@@ -229,33 +213,30 @@ if (isset($_POST["add"])){
 
                 <div style="float: left; width: 30%;">
                     <table>
-                    <tr>
-                        <th>Cesto</th>
-                        <br>
-                    </tr>
-
+						<tr>
+							<th>Cesto</th>
+						</tr>
                         <?php
                             if(!empty($_SESSION["cart"])){
-                                
                                 foreach ($_SESSION["cart"] as $key => $value) {
                                     ?>
                                     <tr>
+									<form method="POST" action="registo_refeicao.php">
                                         <td><?php echo $value["item_name"]; ?></td>
-                                        <td><a href="refeicoes.php?action=delete&idBem=<?php echo $value["product_id"]; ?>">
-                                            <br><span class="btn-warning btn-lg">-</span></a></td>
-
+										<input type="hidden" name="idBem" value= "<?php echo $value["product_id"]; ?>" >
+										
+										<td>
+											<button type="submit" class="btn-warning btn-lg">Adicionar</button>
+										</td>
+									</form>
+										<td>
+											<a href="refeicoes.php?action=delete&idBem=<?php echo $value["product_id"]; ?>"><button class="btn-warning btn-lg">Eliminar</button></a>
+										</td>
                                     </tr>
                                     <?php
                                     }
                                     ?>
-                                    <tr>
-                                        <td>
-                                        <form method="POST" action="registo_refeicao.php">
-                                        <button type="submit" class="btn-warning btn-lg">Confirmar</button>
-                                        </form>
-                                    </td>
-                                    </tr>
-                                    <?php
+                            <?php
                                 }
                             ?>
                     </table>
@@ -263,11 +244,7 @@ if (isset($_POST["add"])){
             </div>
 
             <div style="width: 100%;">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                
                 <div style="float: left; width: 100%;">
                     <table>
                         <tr>
@@ -291,12 +268,11 @@ if (isset($_POST["add"])){
                                 <div class="product">
                                     
                                     <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
-                                    
+									
                                     
                                     <input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
                                    
-                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg"
-                                           value="+">
+                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
                                 </div>
                             </form>
                             
