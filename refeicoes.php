@@ -88,7 +88,7 @@ if (isset($_POST["add"])){
 							$SendPesqUser = filter_input(INPUT_POST, 'SendPesqUser', FILTER_SANITIZE_STRING);
 							if($SendPesqUser){
 								$codigo_beneficiario = filter_input(INPUT_POST, 'codigo_beneficiario', FILTER_SANITIZE_STRING);
-								$query = "SELECT codigo_beneficiario, restricoes FROM beneficiario WHERE codigo_beneficiario ='$codigo_beneficiario' ";
+								$query = "SELECT idBeneficiario, codigo_beneficiario, restricoes FROM beneficiario WHERE codigo_beneficiario ='$codigo_beneficiario' ";
 								$resultado_row_beneficiario = mysqli_query($conn, $query) or die(mysqli_error($conn));
 								$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
 							
@@ -106,7 +106,7 @@ if (isset($_POST["add"])){
                                     Restrições
                                     <?php 
                                         echo $row_beneficiario['restricoes'];
-                                    }
+                                    
                                     ?>
                                 </td>
                             </tr>
@@ -224,7 +224,7 @@ if (isset($_POST["add"])){
 									<form method="POST" action="registo_refeicao.php">
                                         <td><?php echo $value["item_name"]; ?></td>
 										<input type="hidden" name="idBem" value= "<?php echo $value["product_id"]; ?>" >
-										
+										<input type="hidden" name="idBenef" value= "<?php echo $row_beneficiario["idBeneficiario"]; ?>" >
 										<td>
 											<button type="submit" class="btn-warning btn-lg">Adicionar</button>
 										</td>
@@ -251,39 +251,125 @@ if (isset($_POST["add"])){
                             <th>Pratos do dia</th>
                         </tr>
                     </table>
-                </div>
-                
-                    <?php
-                        $query = "SELECT * FROM bem WHERE visivel='1' ";
+                </div> 
+                <div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Sopas'";
                         $result = mysqli_query($conn,$query);
                         if(mysqli_num_rows($result) > 0) {
-
                             while ($row = mysqli_fetch_array($result)) {
-
-                        ?>
-                        <div style="float: left; width: 16%;">
-                            
-                            <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
-
-                                <div class="product">
-                                    
-                                    <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
-									
-                                    
-                                    <input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
-                                   
-                                    <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
-                                </div>
-                            </form>
-                            
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
                 </div>
-               
-
-                    <?php
-                }
-            }
-        ?>
-
+				<div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Carne'";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
+                </div>
+				<div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Peixe'";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
+                </div>
+				<div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Acompanhamento'";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
+                </div>
+				<div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Composto'";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
+                </div>
+				<div style="float: left; width: 16%;">
+					<?php
+                        $query = "SELECT * FROM bem WHERE visivel='1' AND tipoBem='Outros'";
+                        $result = mysqli_query($conn,$query);
+                        if(mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                    <form method="post" action="refeicoes.php?action=add&idBem=<?php echo $row["idBem"]; ?>">
+						<div class="product">
+                            <h5 class="text-info"><?php echo $row["nomeBem"]; ?></h5>
+							<input type="hidden" name="hidden_name" value="<?php echo $row["nomeBem"]; ?>">
+                            <input type="submit" name="add" style="margin-top: 5px;" class="btn-warning btn-lg" value="+">
+                        </div>
+                    </form>
+					<?php
+						}
+						}
+					?>
+                </div>
+				
+				 <?php
+					}
+				?>
         </div>
     </body>
 </html>

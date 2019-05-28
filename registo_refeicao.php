@@ -9,10 +9,8 @@ date_default_timezone_set('Europe/London');
 
 $idRefeicao = filter_input(INPUT_POST, 'idRefeicao', FILTER_SANITIZE_NUMBER_INT);
 $idBem = filter_input(INPUT_POST, 'idBem', FILTER_SANITIZE_NUMBER_INT);
-//$idBenef = filter_input(INPUT_POST, 'idBeneficiario', FILTER_SANITIZE_NUMBER_INT);
-$idBenef = 2;
+$idBenef = filter_input(INPUT_POST, 'idBenef', FILTER_SANITIZE_NUMBER_INT);
 $data = date("Y/m/d");
-
 
 $registo = "INSERT INTO refeicao (idRefeicao, idBem, idBenef, data) VALUES ('$idRefeicao', '$idBem', '$idBenef','$data')";
 $resultado_registo = mysqli_query($conn, $registo) or die(mysqli_error($conn));
@@ -20,7 +18,7 @@ $resultado_registo = mysqli_query($conn, $registo) or die(mysqli_error($conn));
 if(mysqli_insert_id($conn)){
 	?>	
 <script> alert("Registado com sucessso");
-top.location.href='refeicoes.php';
+top.location.href='refeicoes.php?action&idBenef=<?php echo $idBenef; ?>';
 </script>
 <?php
 }else{ 
