@@ -31,7 +31,7 @@ button {
    </style>
 
     
-   <center> <h5><b> Lista de Beneficiário </b></h5></center>
+   <center> <h5><b> Histórico de refeições </b></h5></center>
     <p>
   </header>
 
@@ -43,9 +43,19 @@ require('conexao_perfil.php');
 $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
 $itens_por_pagina = 5;
 $inicio = ($itens_por_pagina*$pagina)-$itens_por_pagina;
-$query="SELECT idBeneficiario, nome, morada, telefone, nr_elementos_agregado, nr_elementos_criancas, codigo_beneficiario, restricoes FROM beneficiario where visivel='1' ORDER BY codigo_beneficiario LIMIT $inicio, $itens_por_pagina"; 
+
+$idBeneficiario=$_GET['idBeneficiario'];
+
+$query = "SELECT refeicao.idRefeicao, refeicao.idBem, refeicao.idBenef, refeicao.data, beneficiario.idBeneficiario, beneficiario.codigo_beneficiario, bem.idBem, bem.nomeBem, bem.idFonte
+FROM refeicao, beneficiario, bem
+WHERE refeicao.idBenef=$idBeneficiario AND refeicao.idBenef = beneficiario.idBeneficiario AND beneficiario.idBeneficiario=$idBeneficiario AND refeicao.idBem = bem.idBem
+ORDER BY refeicao.data DESC
+LIMIT $inicio, $itens_por_pagina"; 
+
+
 $resultado=$mysqli->query($query)or die($mysqli->error);
 $num_total = mysqli_num_rows($resultado);
+
 //defifnir o numero de paginas
 $num_paginas = ceil($num_total/$itens_por_pagina);
 ?>
@@ -58,41 +68,21 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
       <thead>
         <tr>
-          <th>Código Beneficiário</th>
-          <th>Nome</th>
-          <th>Morada</th>
-          <th>Telefone</th>
-          <th>Número de Adultos</th>
-          <th>Número de Criancas</th>
-          <th>Restrições Alimentares</th>
-          <th colspan=3>Operações</th>
+          <th>Nome Bem</th>
+          <th>Cod Fonte</th>
+          <th>Codigo Beneficiario</th>
+          <th>data</th>
         </tr>
       </thead>
   <tbody>
   <?php while($row=$resultado->fetch_assoc()){ ?>
     <tr>
+         <td><?php echo $row['nomeBem'];?></td>
+          <td><?php echo $row['idFonte'];?></td>
+        <td><?php echo $row['codigo_beneficiario'];?></td>
+        <td><?php echo $row['data'];?></td>
 
-        <td><?php echo $row['codigo_beneficiario'];?> </td>
-        <td><?php echo $row['nome'];?></td>
-        <td><?php echo $row['morada'];?></td>
-        <td><?php echo $row['telefone'];?></td>
-        <td><?php echo $row['nr_elementos_agregado'];?></td>
-        <td><?php echo $row['nr_elementos_criancas'];?></td>
-        <td><?php echo $row['restricoes'];?></td>
-
-
-  <td>
-    <a href="editarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>"  class="fa fa-edit" style="font-size:24px;color:black"> </a>
-  </td>
-    <td>
-    <a href="apagarBeneficiario.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>" class="fa fa-trash-o" style="font-size:24px;color:red"> </a>
-  </td>
-   <td>
-    <a href="historico_refeicoes.php?idBeneficiario=<?php echo $row['idBeneficiario'];?>" class="fa fa-bars" style="font-size:24px;color:black"> </a>
-  </td>
-</tr>
-
-<?php }?>
+  <?php }?>
 
   </tbody>
   </table>
@@ -109,7 +99,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       if ($pagina_anterior != 0){ ?>
 
-      <a href="lista_beneficiario.php?pagina=<?php echo $pagina_anterior; ?>" >
+      <a href="historico_refeicoes.php?idBeneficiario=<?php echo $idBeneficiario;?>&pagina=<?php echo $pagina_anterior; ?>" >
        <span class="glyphicon glyphicon-chevron-left" style="color:#000000"></span>
       </a>
 
@@ -122,7 +112,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       //Apresentar a paginação
       for($i = 1; $i < $num_paginas; $i++) { ?>
-      <li><a href="lista_beneficiario.php?pagina=<?php echo $i; ?>"><?php echo $i ; ?></a></li>
+      <li><a href="historico_refeicoes.php?idBeneficiario=<?php echo $idBeneficiario;?>&pagina=<?php echo $i; ?>"><?php echo $i ; ?></a></li>
       <?php } ?>
 
       <li class="next">  
@@ -130,7 +120,7 @@ $pagina_seguinte = $pagina + 1;
     <?php 
       if ($pagina_seguinte <= $num_total){ ?>
 
-      <a href="lista_beneficiario.php?pagina=<?php echo $pagina_seguinte ; ?>">
+      <a href="historico_refeicoes.php?idBeneficiario=<?php echo $idBeneficiario;?>&pagina=<?php echo $pagina_seguinte ; ?>">
         <span class="glyphicon glyphicon-chevron-right" style="color:#000000"></span>
       </a>
 
@@ -145,9 +135,4 @@ $pagina_seguinte = $pagina + 1;
   </ul>
 </nav>
 </div>
-<form method="get" action="novoBeneficiario.php" >
-    <button type="submit">Registar Novo Beneficiário</button>
-</form>
-
-
 </html>
