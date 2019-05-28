@@ -75,8 +75,7 @@ if (isset($_POST["add"])){
 
 								while($rows = $result->fetch_assoc()) {
 									$codigo = $rows['codigo_beneficiario'];
-									$nome = $rows['nome'];
-									echo "<option value='$codigo'>$nome</option>";
+									echo "<option value='$codigo'></option>";
 								}
 							?>
                                     </datalist>

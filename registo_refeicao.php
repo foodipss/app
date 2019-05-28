@@ -18,7 +18,7 @@ $resultado_registo = mysqli_query($conn, $registo) or die(mysqli_error($conn));
 if(mysqli_insert_id($conn)){
 	?>	
 <script> alert("Registado com sucessso");
-top.location.href='refeicoes.php?action&idBenef=<?php echo $idBenef; ?>';
+location.href='refeicoes.php';
 </script>
 <?php
 }else{ 
