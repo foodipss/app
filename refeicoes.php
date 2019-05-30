@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("conexaoPesquisa.php");
+                      	
 
 if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
@@ -14,7 +15,7 @@ if (isset($_POST["add"])){
                 $_SESSION["cart"][$count] = $item_array;
                 echo '<script>window.location="refeicoes.php"</script>';
             }else{
-                echo '<script>alert("Atenção!!Bem alimentar já adicionado")</script>';
+                echo '<script>alert("Atenção!Bem alimentar já adicionado.")</script>';
                 echo '<script>window.location="refeicoes.php"</script>';
             }
         }else{
@@ -66,7 +67,8 @@ if (isset($_POST["add"])){
 
                         <tr>
                             <td>
-                                <form method="POST" action="">
+                            	
+                                <form method="POST" action="refeicoes.php">
                                     <input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
                                     <datalist id="browsers">
                                         <?php 
@@ -94,7 +96,8 @@ if (isset($_POST["add"])){
 						?>
                             <tr>
                                 <td>
-                                    Código
+                                    <br>
+                                    Código Beneficiário: 
                                     <?php 
                                         echo $row_beneficiario['codigo_beneficiario'];
                                     ?>
@@ -102,10 +105,10 @@ if (isset($_POST["add"])){
                             </tr>
                             <tr>
                                 <td>
-                                    Restrições
+                                    Restrições: 
                                     <?php 
                                         echo $row_beneficiario['restricoes'];
-                                    
+                                    }
                                     ?>
                                 </td>
                             </tr>
@@ -366,9 +369,6 @@ if (isset($_POST["add"])){
 					?>
                 </div>
 				
-				 <?php
-					}
-				?>
         </div>
     </body>
 </html>

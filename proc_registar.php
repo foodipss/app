@@ -14,9 +14,12 @@ $quantidadeLevou = filter_input(INPUT_POST, 'quantidadeLevou', FILTER_SANITIZE_N
 $quantidadeEntregue = filter_input(INPUT_POST, 'quantidadeEntregue', FILTER_SANITIZE_NUMBER_INT);
 $data = date("y/m/d H:i:s");
 $isRecolha=1;
+$deviaOntem=filter_input(INPUT_POST, 'deviaOntem', FILTER_SANITIZE_NUMBER_INT);
 
-$result_tupperware = "INSERT INTO tupperware (idtupperware, idBeneficiario, quantidadeLevou, isRecolha, quantidadeEntregue, data) VALUES ('$idtupperware', '$idBeneficiario', '$quantidadeLevou', $isRecolha, '$quantidadeEntregue', '$data')";
+$result_tupperware = "INSERT INTO tupperware (idtupperware, idBeneficiario, quantidadeLevou, isRecolha, quantidadeEntregue, data, deviaOntem) VALUES ('$idtupperware', '$idBeneficiario', '$quantidadeLevou', $isRecolha, '$quantidadeEntregue', '$data', '$deviaOntem')";
+$deve_benef= "UPDATE beneficiario SET deve='$deviaOntem' WHERE idBeneficiario='$idBeneficiario'";
 $resultado_tupperware = mysqli_query($conn, $result_tupperware) or die(mysqli_error($conn));
+$resultado_final=mysqli_query($conn, $deve_benef) or die(mysqli_error($conn));
 
 if(mysqli_insert_id($conn)){
 	?>	
@@ -26,7 +29,7 @@ top.location.href='pesquisar.php';
 <?php
 }else{ 
 ?>
-	<script> alert("Erro ao registar");
+	<script> alert("Registado com sucessso");
 	top.location.href='pesquisar.php';
 	</script>	
 <?php } ?>
