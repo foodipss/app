@@ -63,7 +63,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
   <th>Morada</th> 
   <th>Email</th>
   <th>Contacto</th>
-  <th colspan=2></th>
+  
  </tr>
     </thead>
 <tbody>
@@ -83,12 +83,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
       <?php echo $row['contactofonte'];?>
       </td>
 
-<td>
-  <a href="editFonteV.php?idfonte=<?php echo $row['idfonte'];?>"class="fa fa-edit" style="font-size:24px;color:black"></a>
-</td>
-  <td>
-  <a href="apagarFonteV.php?idfonte=<?php echo $row['idfonte'];?>"class="fa fa-trash-o" style="font-size:24px;color:red"></a>
-</td>
+
 
 <?php } ?>
 
@@ -144,8 +139,5 @@ $pagina_seguinte = $pagina + 1;
 </nav>
 </div>
 
-<form method="get" action="registarFontesV.php" >
-    <button type="submit">Registar Nova Fonte</button>
-</form>
 </body>
 </html>
