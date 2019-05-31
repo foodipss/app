@@ -101,7 +101,7 @@ if (isset($_POST["add"])){
 					<br>
 					<p style="font-weight: bold;" >Informações Pessoais do Beneficiário selecionado</p>
 					
-					<br>
+					
                                     Código Beneficiário: 
                                     <?php 
                                         echo $row_beneficiario['codigo_beneficiario'];
