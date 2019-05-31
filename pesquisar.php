@@ -233,8 +233,10 @@ $pagina_seguinte = $pagina + 1;
 		        <input type="hidden" name="idBeneficiario"   value="<?php echo $row_row_beneficiario['idBeneficiario'];?>"><br><br>
 			<input type="hidden" name="deviaOntem"   value="<?php echo $saldo;?>">
 			<label>A entregar: </label>
+			<br>
 			<input name="quantidadeEntregue"  value="<?php echo $saldo;?>"><br><br>
 			<label>Levou: </label>
+			<br>
 			<input name="quantidadeLevou" value=""><br><br>
 
 			<button type="submit"  data-toggle="modal" data-target="#myModal">Registar</button>
