@@ -58,7 +58,7 @@ h1 {
   color: black;
   font-family: ariana;
   font-weight: bold;
-  font-size: 8px;
+  
 }
    </style>
     </head>
