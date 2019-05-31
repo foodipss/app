@@ -102,7 +102,7 @@ h1 {
                                 <td>
                                     <br>
 					<br>
-					<h1>Informações Pessoais do Beneficiário selecionado</h1>
+					<p style="font-weight: bold;" >Informações Pessoais do Beneficiário selecionado</p>
 					<br>
 					<br>
                                     Código Beneficiário: 
