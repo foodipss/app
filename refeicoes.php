@@ -51,16 +51,7 @@ if (isset($_POST["add"])){
         <link rel="stylesheet" href="css/estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	    
-	         <style>
-
-h1 {
-  color: black;
-  font-family: ariana;
-  font-weight: bold;
-  
-}
-   </style>
+	
     </head>
 
     <body>
@@ -108,7 +99,7 @@ h1 {
                                 <td>
                                     <br>
 					<br>
-					<h1>Informações Pessoais do Beneficiário selecionado</h1>
+					<h1 style="font-weight: bold;" >Informações Pessoais do Beneficiário selecionado</h1>
 					<br>
 					<br>
                                     Código Beneficiário: 
