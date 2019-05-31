@@ -17,7 +17,7 @@
 <body> 
  
 
-<?php require_once "index.php"; ?>
+<?php require_once "indexVoluntario.php"; ?>
 
     <h3 align="center" style="font-size:30px">Manual de Utilizador</h3>
 <h4  style="font-size:15px">O presente documento consolida a informação necessária para utilização da plataforma web</h4>
