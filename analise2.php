@@ -107,6 +107,16 @@ include_once("conexaoPesquisa.php");
     </script>
 </head>
   <body>
+    <?php
+    if (!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
+        ?>
+        <script>
+            window.location.href = "login.php";
+        </script>
+    <?php
+}
+
+?>
   <div id="donutchart" style="width: 50%; height: 50%; padding: 5px; "></div>
   </body>
 </html>
