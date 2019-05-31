@@ -103,7 +103,7 @@ h1 {
                                     <br>
 					<br>
 					<p style="font-weight: bold;" >Informações Pessoais do Beneficiário selecionado</p>
-					<br>
+					
 					<br>
                                     Código Beneficiário: 
                                     <?php 
