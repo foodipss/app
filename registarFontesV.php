@@ -57,16 +57,7 @@ button[type=button]:hover {
     <p>
   </header>
 <body>
-	<?php
-    if (!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
-        ?>
-        <script>
-            window.location.href = "login.php";
-        </script>
-    <?php
-}
 
-?>
 <form action="queryRegistarFonteV.php" method="post">
   Nome da Fonte: 
   <br>      
