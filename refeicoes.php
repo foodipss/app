@@ -249,6 +249,7 @@ if (isset($_POST["add"])){
                 
                 <div style="float: left; width: 100%;">
                     <table>
+			    <br>
                         <tr>
                             <th>Pratos do dia</th>
                         </tr>
