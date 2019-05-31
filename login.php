@@ -84,6 +84,12 @@
 include_once 'funcoes_bd.php';
 session_start();
 
+if (isset($_SESSION['user'])) {   // Checking whether the session is already there or not if
+    // true then header redirect it to the home page directly
+    header("Location:analise.php");
+    die();
+}
+
 if (isset($_GET['logout']) || isset($_POST['canc'])) {
     session_destroy();
     header("Location: login.php");
@@ -98,8 +104,10 @@ if (isset($_GET['logout']) || isset($_POST['canc'])) {
         if ($dados) {
             $valido = TRUE;
             if ($_SESSION['tipo_utilizador'] == 'Administrador') {
+		     $_SESSION['use'] = $tipo_utilizador;
 					header ("Location: analise.php");
             } else if ($_SESSION['tipo_utilizador'] == 'Voluntario') {
+		    $_SESSION['use'] = $tipo_utilizador;
 					header ("Location: analise2.php");
         
         
