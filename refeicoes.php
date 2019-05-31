@@ -99,7 +99,7 @@ if (isset($_POST["add"])){
                                 <td>
                                     <br>
 					<br>
-					<h1 style="font-weight: bold;" >Informações Pessoais do Beneficiário selecionado</h1>
+					Informações Pessoais do Beneficiário selecionado
 					<br>
 					<br>
                                     Código Beneficiário: 
