@@ -57,8 +57,8 @@ if (isset($_POST["add"])){
 h1 {
   color: black;
   font-family: ariana;
-	font-weight: bold;
-  font-size: 15px;
+  font-weight: bold;
+  font-size: 8px;
 }
    </style>
     </head>
