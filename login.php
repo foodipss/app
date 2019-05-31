@@ -13,11 +13,47 @@
 		}
 		
 		button[type="submit"] {
-			font-size: 18px;
-			background-color: white; 
-			color: black; 
-			border: 2px solid #FFBF00;
+  width: 40%;
+  background-color: #FFBF00;
+  color: white;
+  padding: 14px 20px;
+  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 		}
+
+
+  button[type=submit]:hover {
+  background-color: #FF8000;
+}
+
+
+  input[type=text], select {
+  
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}   
+
+input[type=password], select {
+  
+  width: 80%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=checkbox], select {
+  font-family: ariana;
+  font-size: 15px;
+}     
 		
 	</style>
  
@@ -34,19 +70,17 @@
       <input type="text" name="user" class="form-control" placeholder="UTILIZADOR">
     </div>
 	
-	<br>
     <div class="form-group">
       <label for="pwd"></label>
       <input type="password" name="password" class="form-control" placeholder="PASSWORD">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox"> Lembrar o meu acesso</label>
+      <label>
+        <input type="checkbox" style="font-family: ariana;"> Lembrar o meu acesso
+      </label>
     </div>
 		   <br>
     <button type="submit"  class="btn btn-default">  Entrar </button>
-    
-    
-
   </form>
 	  </div>
  </div>
