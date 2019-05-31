@@ -53,16 +53,7 @@ $num_paginas = ceil($num_total/$itens_por_pagina);
 
 
 <body>
-   <?php
-    if (!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
-        ?>
-        <script>
-            window.location.href = "login.php";
-        </script>
-    <?php
-}
-
-?>
+  
   <div class="colBens">
   
   <p></p>
