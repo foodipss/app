@@ -12,6 +12,13 @@
 			font-size: 18px;
 		}
 		
+		button[type="submit"] {
+			font-size: 18px;
+			background-color: white; 
+			color: black; 
+			border: 2px solid #FFBF00;
+		}
+		
 	</style>
  
    <link rel="stylesheet" href="css/estiloLogin.css">
@@ -35,6 +42,7 @@
     <div class="checkbox">
       <label><input type="checkbox"> Lembrar o meu acesso</label>
     </div>
+		   <br>
     <button type="submit"  class="btn btn-default">  Entrar </button>
     
     
