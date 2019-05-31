@@ -6,6 +6,16 @@
 
 
 <body>
+  <?php
+    if (!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
+        ?>
+        <script>
+            window.location.href = "login.php";
+        </script>
+    <?php
+}
+
+?>
   <?php require_once "index.php"; ?>
 </body>
 
