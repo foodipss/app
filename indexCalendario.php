@@ -56,6 +56,16 @@
  
  </head>
  <body>
+	 <?php
+    if (!isset($_SESSION['use'])) { // If session is not set then redirect to Login Page
+        ?>
+        <script>
+            window.location.href = "login.php";
+        </script>
+    <?php
+}
+
+?>
 	<div class="container">
 		<div class="row">
 			<div class="col"></div>
