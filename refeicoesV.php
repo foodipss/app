@@ -2,7 +2,6 @@
 session_start();
 include_once("conexaoPesquisa.php");
                       	
-
 if (isset($_POST["add"])){
         if (isset($_SESSION["cart"])){
             $item_array_id = array_column($_SESSION["cart"],"product_id");
@@ -26,7 +25,6 @@ if (isset($_POST["add"])){
             $_SESSION["cart"][0] = $item_array;
         }
     }
-
     if (isset($_GET["action"])){
         if ($_GET["action"] == "delete"){
             foreach ($_SESSION["cart"] as $keys => $value){
@@ -38,7 +36,6 @@ if (isset($_POST["add"])){
             }
         }
     }
-
 ?>
 <!DOCTYPE html>
     <html>
@@ -51,6 +48,15 @@ if (isset($_POST["add"])){
         <link rel="stylesheet" href="css/estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	    
+	         <style>
+h1 {
+  color: black;
+  font-family: ariana;
+  font-weight: bold;
+  
+}
+   </style>
     </head>
 
     <body>
@@ -72,9 +78,7 @@ if (isset($_POST["add"])){
                                     <input list="browsers" class="btn btn-default btn-lg" name="codigo_beneficiario">
                                     <datalist id="browsers">
                                         <?php 
-
 								$result = $conn->query("SELECT codigo_beneficiario, nome FROM beneficiario WHERE visivel='1'");
-
 								while($rows = $result->fetch_assoc()) {
 									$codigo = $rows['codigo_beneficiario'];
 									echo "<option value='$codigo'></option>";
@@ -97,6 +101,10 @@ if (isset($_POST["add"])){
                             <tr>
                                 <td>
                                     <br>
+					<br>
+					<h1>Informações Pessoais do Beneficiário selecionado</h1>
+					<br>
+					<br>
                                     Código Beneficiário: 
                                     <?php 
                                         echo $row_beneficiario['codigo_beneficiario'];
@@ -223,6 +231,12 @@ if (isset($_POST["add"])){
                                 foreach ($_SESSION["cart"] as $key => $value) {
                                     ?>
                                     <tr>
+					    <?php
+					$query = "SELECT idBeneficiario, restricoes FROM beneficiario";
+					$resultado_row_beneficiario = mysqli_query($conn, $query) or die(mysqli_error($conn));
+					$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
+							
+					?>
 									<form method="POST" action="registo_refeicao.php">
                                         <td><?php echo $value["item_name"]; ?></td>
 										<input type="hidden" name="idBem" value= "<?php echo $value["product_id"]; ?>" >
@@ -249,6 +263,7 @@ if (isset($_POST["add"])){
                 
                 <div style="float: left; width: 100%;">
                     <table>
+			    <br>
                         <tr>
                             <th>Pratos do dia</th>
                         </tr>
