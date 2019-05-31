@@ -231,9 +231,8 @@ $pagina_seguinte = $pagina + 1;
 
 		<form method="POST" action="proc_registar.php">
 		        <input type="hidden" name="idBeneficiario"   value="<?php echo $row_row_beneficiario['idBeneficiario'];?>"><br><br>
+			<input type="hidden" name="deviaOntem"   value="<?php echo $saldo;?>">
 			<label>A entregar: </label>
-			<br>
-			<input type="hidden" name="deviaOntem"   value="<?php echo $saldo;?>"><br><br>
 			<input name="quantidadeEntregue"  value="<?php echo $saldo;?>"><br><br>
 			<label>Levou: </label>
 			<br>
