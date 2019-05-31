@@ -237,6 +237,12 @@ h1 {
                                 foreach ($_SESSION["cart"] as $key => $value) {
                                     ?>
                                     <tr>
+					    <?php
+					$query = "SELECT idBeneficiario, restricoes FROM beneficiario";
+					$resultado_row_beneficiario = mysqli_query($conn, $query) or die(mysqli_error($conn));
+					$row_beneficiario = mysqli_fetch_assoc($resultado_row_beneficiario);
+							
+					?>
 									<form method="POST" action="registo_refeicao.php">
                                         <td><?php echo $value["item_name"]; ?></td>
 										<input type="hidden" name="idBem" value= "<?php echo $value["product_id"]; ?>" >
