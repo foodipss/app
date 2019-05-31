@@ -235,7 +235,6 @@ $pagina_seguinte = $pagina + 1;
 			<label>A entregar: </label>
 			<input name="quantidadeEntregue"  value="<?php echo $saldo;?>"><br><br>
 			<label>Levou: </label>
-			<br>
 			<input name="quantidadeLevou" value=""><br><br>
 
 			<button type="submit"  data-toggle="modal" data-target="#myModal">Registar</button>
